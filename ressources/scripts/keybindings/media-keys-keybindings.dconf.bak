@@ -1,0 +1,63 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+terminal=['<Primary><Alt>t']
+
+[custom-keybindings/custom0]
+binding='<Primary>Page_Up'
+command="sh -c 'sleep 0.3 && xset dpms force off'"
+name='Eteindre écran'
+
+[custom-keybindings/custom1]
+binding='<Primary>Home'
+command='shutdown now'
+name='Eteindre le PC'
+
+[custom-keybindings/custom10]
+binding='<Primary><Alt>parenleft'
+command="sh -c '~/.mw_tools/themes/theme-5.sh'"
+name='Thème 5'
+
+[custom-keybindings/custom12]
+binding='<Primary>twosuperior'
+command='sh -c "sleep 0.5 && xdotool key ctrl+shift+l"'
+name='Bitwarden'
+
+[custom-keybindings/custom2]
+binding='<Primary><Shift>F1'
+command='flameshot gui -p /home/jsigma/Images/Captures'
+name='Flameshot'
+
+[custom-keybindings/custom3]
+binding='<Primary><Alt>ampersand'
+command="sh -c '~/.mw_tools/themes/theme-1.sh'"
+name='Thème 1'
+
+[custom-keybindings/custom4]
+binding='<Primary><Alt>eacute'
+command="sh -c '~/.mw_tools/themes/theme-2.sh'"
+name='Thème 2'
+
+[custom-keybindings/custom5]
+binding='<Primary><Alt>quotedbl'
+command="sh -c '~/.mw_tools/themes/theme-3.sh'"
+name='Thème 3'
+
+[custom-keybindings/custom6]
+binding='<Primary><Alt>k'
+command='killall Scout-App'
+name='Kill Scout-App'
+
+[custom-keybindings/custom7]
+binding='F1'
+command='tilix --quake'
+name='Tilix Guake'
+
+[custom-keybindings/custom8]
+binding='<Primary>F1'
+command='flatpak run org.flameshot.Flameshot gui'
+name='Flameshot'
+
+[custom-keybindings/custom9]
+binding='<Primary><Alt>apostrophe'
+command="sh -c '~/.mw_tools/themes/theme-4.sh'"
+name='Thème 4'
