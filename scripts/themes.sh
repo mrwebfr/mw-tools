@@ -15,6 +15,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash setup.sh
                 break
                 ;;
             "MW - Icônes")
@@ -43,5 +44,3 @@ source scripts/functions.sh
 clear && banner
 
 themes
-
-bash setup.sh

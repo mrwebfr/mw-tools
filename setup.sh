@@ -19,8 +19,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Quitter")
-                clear
-                set -e
+                # clear
                 exit
                 ;;
             "Mises à jour")
@@ -49,12 +48,12 @@ Veuillez faire un choix : '
 
 }
 
+sudo rm -r /tmp/mw_tools
 cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
-clear
+# clear
 
 chmod +x scripts/functions.sh
 source scripts/functions.sh
 
-set +e
 main

@@ -36,7 +36,7 @@ function f_tools_hdd {
     do
         case $opt in
             "Retour")
-                clear
+                bash setup.sh
                 break
                 ;;
             "Taille des disques {DFC}")
@@ -79,7 +79,3 @@ source scripts/functions.sh
 clear && banner
 
 f_tools_hdd
-
-wait
-
-bash setup.sh

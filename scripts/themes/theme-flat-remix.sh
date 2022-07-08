@@ -97,6 +97,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Quitter")
+                bash setup.sh
                 break
                 ;;
             "Installer / Mise à jour")

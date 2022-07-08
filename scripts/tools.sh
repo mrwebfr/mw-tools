@@ -15,7 +15,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                clear
+                bash setup.sh
                 break
                 ;;
             "Vider la Ram en cache")
@@ -61,5 +61,3 @@ source scripts/functions.sh
 clear && banner
 
 f_tools
-
-bash setup.sh

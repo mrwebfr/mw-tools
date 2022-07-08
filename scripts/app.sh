@@ -51,6 +51,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash setup.sh
                 break
                 ;;
             "Ubuntu Extras")
@@ -281,5 +282,3 @@ source scripts/functions.sh
 clear && banner
 
 f_install
-
-bash setup.sh

@@ -38,6 +38,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Quitter")
+                bash setup.sh
                 break
                 ;;
             "Installer / Mise à jour")
@@ -64,7 +65,3 @@ source scripts/functions.sh
 clear && banner
 
 icons_MW
-
-wait
-
-bash setup.sh
