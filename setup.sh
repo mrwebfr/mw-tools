@@ -20,7 +20,7 @@ Veuillez faire un choix : '
         case $opt in
             "Quitter")
                 clear
-                exit 0
+                exit
                 ;;
             "Mises à jour")
                 run_script "scripts/dist_update.sh"
