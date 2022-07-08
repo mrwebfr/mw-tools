@@ -51,7 +51,7 @@ Veuillez faire un choix : '
 cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
 # clear
-
+cd /tmp/mw_tools/
 chmod +x scripts/functions.sh
 source scripts/functions.sh
 
