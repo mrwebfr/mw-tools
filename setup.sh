@@ -52,7 +52,7 @@ cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
 # clear
 
-chmod +x scripts/functions.sh
-source scripts/functions.sh
+chmod +x /tmp/mw_tools/scripts/functions.sh
+source /tmp/mw_tools/scripts/functions.sh
 
 main
