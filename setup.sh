@@ -20,6 +20,7 @@ Veuillez faire un choix : '
         case $opt in
             "Quitter")
                 clear
+                set -e
                 exit
                 ;;
             "Mises à jour")
@@ -55,4 +56,5 @@ clear
 chmod +x scripts/functions.sh
 source scripts/functions.sh
 
+set +e
 main
