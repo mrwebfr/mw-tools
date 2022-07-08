@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main() {
+source /tmp/mw_tools/scripts/functions.sh
     banner
 
     PS3='
