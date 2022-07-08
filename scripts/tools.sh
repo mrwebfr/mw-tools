@@ -62,6 +62,4 @@ clear && banner
 
 f_tools
 
-wait_second 5
-
 bash setup.sh

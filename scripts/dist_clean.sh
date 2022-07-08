@@ -148,6 +148,6 @@ clear && banner
 
 clean
 
-wait_second 5
+wait
 
 bash setup.sh

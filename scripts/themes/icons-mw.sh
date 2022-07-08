@@ -65,6 +65,6 @@ clear && banner
 
 icons_MW
 
-wait_second 5
+wait
 
 bash setup.sh

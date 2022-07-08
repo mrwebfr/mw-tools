@@ -48,6 +48,6 @@ clear && banner
 
 dist_update
 
-wait_second 5
+wait
 
 bash setup.sh

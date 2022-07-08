@@ -44,6 +44,4 @@ clear && banner
 
 themes
 
-wait_second 5
-
 bash setup.sh

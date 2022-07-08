@@ -1,18 +1,21 @@
 #!/bin/bash
 
-if cat /etc/*release | grep ^NAME | grep Fedora; then
-    OS="fedora"
-elif cat /etc/*release | grep ^NAME | grep Ubuntu; then
-    OS="ubuntu"
-elif cat /etc/*release | grep ^NAME | grep Debian; then
-    OS="ubuntu"
-elif cat /etc/*release | grep ^NAME | grep Mint; then
-    OS="ubuntu"
-else
-    echo "OS Ubuntu/Fedora NOT DETECTED"
-    read -e -i "" -p "Entrer pour continuer : " choice
-fi
-clear
+function dist_os() {
+    if cat /etc/*release | grep ^NAME | grep Fedora; then
+        OS="fedora"
+    elif cat /etc/*release | grep ^NAME | grep Ubuntu; then
+        OS="ubuntu"
+    elif cat /etc/*release | grep ^NAME | grep Debian; then
+        OS="ubuntu"
+    elif cat /etc/*release | grep ^NAME | grep Mint; then
+        OS="ubuntu"
+    else
+        echo "OS Ubuntu/Fedora NOT DETECTED"
+        read -e -i "" -p "Entrer pour continuer : " choice
+    fi
+    clear
+}
+dist_os
 
 function banner() {
     local banner_path="$PWD/scripts/banner"
@@ -29,7 +32,6 @@ function banner() {
 function run_script() {
     local script_path=$1
     local script_name=$2
-    # wait_second 5
     if [ -f "$PWD/$script_path" ];then
         chmod +x "$PWD/$script_path"
     else
@@ -39,10 +41,10 @@ function run_script() {
     unset script_path
 }
 
-function wait_second() {
+function wait() {
     echo ""
     read -e -i "" -p "Entrer pour continuer : " choice
-    # for (( i=0 ; i<$1 ; i++ ));do
+    # for (( i=0 ; i<5 ; i++ ));do
     #     echo -n "."
     #     sleep 1
     # done

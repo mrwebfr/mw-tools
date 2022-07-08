@@ -80,6 +80,6 @@ clear && banner
 
 f_tools_hdd
 
-wait_second 15
+wait
 
 bash setup.sh
