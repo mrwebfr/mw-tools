@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function main() {
-source /tmp/mw_tools/scripts/functions.sh
     banner
 
     PS3='
@@ -53,7 +52,7 @@ cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
 # clear
 
-chmod +x /tmp/mw_tools/scripts/functions.sh
-source /tmp/mw_tools/scripts/functions.sh
+chmod +x scripts/functions.sh
+source scripts/functions.sh
 
 main
