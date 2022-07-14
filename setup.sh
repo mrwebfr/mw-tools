@@ -50,7 +50,7 @@ Veuillez faire un choix : '
 sudo rm -r /tmp/mw_tools/
 cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
-# clear
+clear
 cd /tmp/mw_tools/
 chmod +x scripts/functions.sh
 source scripts/functions.sh

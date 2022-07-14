@@ -29,7 +29,7 @@ function icons_MW {
 Veuillez faire un choix : '
 
     options=(
-    "Quitter"
+    "Retour"
     "Installer / Mise à jour"
     "Supprimer"
     )
@@ -37,7 +37,7 @@ Veuillez faire un choix : '
     select opt in "${options[@]}"
     do
         case $opt in
-            "Quitter")
+            "Retour")
                 bash setup.sh
                 break
                 ;;
