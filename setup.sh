@@ -19,7 +19,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Quitter")
-                # clear
+                clear
                 exit
                 ;;
             "Mises à jour")
