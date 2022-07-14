@@ -18,7 +18,7 @@ function f_tools_wifi {
     do
         case $opt in
             "Retour")
-                clear
+                bash setup.sh
                 break
                 ;;
             "Paramètres du wifi")
@@ -39,4 +39,9 @@ function f_tools_wifi {
         esac
     done
 }
+
+source scripts/functions.sh
+
+clear && banner
+
 f_tools_wifi
