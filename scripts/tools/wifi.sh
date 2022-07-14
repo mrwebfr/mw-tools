@@ -24,16 +24,19 @@ function f_tools_wifi {
             "Paramètres du wifi")
                 clear
                 f_tools_nm-connection-editor
+                bash setup.sh
                 break
                 ;;
             "Informations du Wifi")
                 clear
                 f_tools_wavemon
+                bash setup.sh
                 break
                 ;;
             "Informations Wifi disponibles")
                 clear
                 f_tools_nmcli
+                bash setup.sh
                 break
                 ;;
         esac
