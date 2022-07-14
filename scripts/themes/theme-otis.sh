@@ -40,14 +40,15 @@ function theme_otis {
 Veuillez faire un choix : '
 
     options=(
-    "Quitter"
+    "Retour"
     "Installer / Mise à jour"
     "Supprimer"
     )
     select opt in "${options[@]}"
     do
         case $opt in
-            "Quitter")
+            "Retour")
+                bash setup.sh
                 break
                 ;;
             "Installer / Mise à jour")
@@ -64,5 +65,9 @@ Veuillez faire un choix : '
         esac
     done
 }
+
+source scripts/functions.sh
+
+clear && banner
 
 theme_otis
