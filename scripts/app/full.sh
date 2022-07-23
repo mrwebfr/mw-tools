@@ -23,26 +23,31 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Paquets utiles - [Ubuntu]")
                 sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                bash scripts/app.sh
                 break
                 ;;
             "Flatpak - [Ubuntu] (Redémarrage)")
                 sudo apt install -y flatpak gnome-software-plugin-flatpak
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
+                bash scripts/app.sh
                 break
                 ;;
             "Flatpak Beta - [Ubuntu]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
+                bash scripts/app.sh
                 break
                 ;;
             "Pilotes Nvidia PPA - [Ubuntu]")
                 sudo add-apt-repository ppa:graphics-drivers/ppa
                 sudo apt update
+                bash scripts/app.sh
                 break
                 ;;
             "ZRam - [Ubuntu]")
@@ -54,21 +59,25 @@ Veuillez faire un choix : '
     à
     mem=$(((totalmem * 2 / ${NRDEVICES}) * 1024))
     '
+                bash scripts/app.sh
                 break
                 ;;
             "EarlyOOM (Ram) - [Ubuntu]")
                 sudo apt install earlyoom
+                bash scripts/app.sh
                 break
                 ;;
             "Codecs multimédias essentiels - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt install ubuntu-restricted-extras
+                bash scripts/app.sh
                 break
                 ;;
             "Microsoft fonts - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt update && sudo apt install ttf-mscorefonts-installer
                 sudo fc-cache -f -v
+                bash scripts/app.sh
                 break
                 ;;
             "Fonts Microsoft & Apple - [GitHub]")
@@ -78,6 +87,7 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -110,51 +120,61 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Paquets utiles - [Fedora]")
                 sudo dnf install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                bash scripts/app.sh
                 break
                 ;;
             "Flatpak - [Fedora]")
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
+                bash scripts/app.sh
                 break
                 ;;
             "Flatpak Beta - [Fedora]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
+                bash scripts/app.sh
                 break
                 ;;
             "Snap - [Fedora]")
                 app_snap
+                bash scripts/app.sh
                 break
                 ;;
             "RPMFusion Free - [Fedora]")
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-free-appstream-data
+                bash scripts/app.sh
                 break
                 ;;
             "RPMFusion Non-Free - [Fedora]")
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-nonfree-appstream-data
+                bash scripts/app.sh
                 break
                 ;;
             "Codecs multimédias - [Fedora]")
                 sudo dnf install gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly
                 sudo dnf install gstreamer1-plugins-{base,good,bad-free,good-extras,bad-free-extras} gstreamer1-plugin-mpg123
                 sudo dnf install gstreamer1-libav gstreamer1-plugins-{bad-freeworld,ugly}
+                bash scripts/app.sh
                 break
                 ;;
             "NCDU (disk space) - [Fedora]")
                 sudo dnf install ncdu
+                bash scripts/app.sh
                 break
                 ;;
             "Microsoft fonts - [Fedora DNF]")
                 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
                 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+                bash scripts/app.sh
                 break
                 ;;
             "Fonts Microsoft & Apple - [GitHub]")
@@ -164,6 +184,7 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -187,15 +208,18 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Snap - [Fedora]")
                 sudo dnf install snapd
                 sudo ln -s /var/lib/snapd/snap /snap
+                bash scripts/app.sh
                 break
                 ;;
             "Snap store - [Snap]")
                 sudo snap install snap-store
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -223,11 +247,13 @@ do
     case $opt in
         "Retour")
             clear
+            bash scripts/app.sh
             break
             ;;
         "Flash Player - [Ubuntu]")
             clear
             sudo apt install adobe-flashplugin
+            bash scripts/app.sh
             break
             ;;
         *) echo "invalid option $REPLY";;
@@ -250,10 +276,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Anydesk - [Flatpak]")
                 flatpak install flathub com.anydesk.Anydesk
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -277,14 +305,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Atom - [Flatpak]")
                 flatpak install io.atom.Atom
+                bash scripts/app.sh
                 break
                 ;;
             "Atom - [Snap]")
                 sudo snap install atom --classic
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -308,14 +339,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Audacity - [Flatpak]")
                 flatpak install flathub org.audacityteam.Audacity
+                bash scripts/app.sh
                 break
                 ;;
             "Audacity - [Snap]")
                 sudo snap install audacity
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -339,14 +373,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Bitwarden - [Flatpak]")
                 flatpak install com.bitwarden.desktop
+                bash scripts/app.sh
                 break
                 ;;
             "Bitwarden - [Snap]")
                 sudo snap install bitwarden
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -372,30 +409,37 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Ubuntu]")
                 sudo apt install flameshot
+                bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Fedora]")
                 sudo dnf install flameshot
+                bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Snap]")
                 sudo snap install flameshot
+                bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Flatpak]")
                 flatpak install flathub org.flameshot.Flameshot
+                bash scripts/app.sh
                 break
                 ;;
             "SimpleScreenRecorder - [Snap]")
                 sudo snap install simplescreenrecorder
+                bash scripts/app.sh
                 break
                 ;;
             "Kooha - [Flatpak]")
                 flatpak install flathub io.github.seadve.Kooha
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -418,10 +462,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Coolero - [Flatpak]")
                 flatpak install flathub org.coolero.Coolero
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -444,10 +490,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Detwinner (Duplicate) - [Flatpak]")
                 flatpak install flathub com.neatdecisions.Detwinner
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -470,10 +518,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Filezilla - [Flatpak]")
                 flatpak install flathub org.filezillaproject.Filezilla
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -506,50 +556,62 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Firefox - [Snap]")
                 sudo snap install firefox
+                bash scripts/app.sh
                 break
                 ;;
             "Firefox Beta - [Snap]")
                 sudo snap install firefox --beta
+                bash scripts/app.sh
                 break
                 ;;
             "Firefox Nightly- [Snap]")
                 sudo snap install firefox --edge
+                bash scripts/app.sh
                 break
                 ;;
             "Firefox - [Flatpak]")
                 flatpak install flathub org.mozilla.firefox
+                bash scripts/app.sh
                 break
                 ;;
             "Firefox Beta - [Flatpak]")
                 flatpak install --user https://flathub.org/beta-repo/appstream/org.mozilla.firefox.flatpakref
+                bash scripts/app.sh
                 break
                 ;;
             "Brave - [Flatpak]")
                 flatpak install flathub com.brave.Browser
+                bash scripts/app.sh
                 break
                 ;;
             "Brave - [Snap]")
                 sudo snap install brave
+                bash scripts/app.sh
                 break
                 ;;
             "Chrome - [Flatpak]")
                 flatpak install flathub com.google.Chrome
+                bash scripts/app.sh
                 break
                 ;;
             "Chromium - [Snap]")
                 sudo snap install chromium
+                bash scripts/app.sh
                 break
                 ;;
             "Chromium - [Flatpak]")
                 flatpak install flathub org.chromium.Chromium
+                bash scripts/app.sh
                 break
                 ;;
             "Opera - [Snap]")
                 sudo snap install opera
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -572,10 +634,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Github Desktop - [URL]")
                 xdg-open https://github.com/shiftkey/desktop
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -599,16 +663,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Installer Hypnotix")
                 sudo add-apt-repository ppa:kelebek333/mint-tools
                 sudo apt install hypnotix
+                bash scripts/app.sh
                 break
                 ;;
             "Supprimer Hypnotix")
                 sudo apt autoremove --purge hypnotix
                 sudo add-apt-repository --remove ppa:kelebek333/mint-tools
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -632,14 +699,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Krita - [Flatpak]")
                 flatpak install flathub org.kde.krita
+                bash scripts/app.sh
                 break
                 ;;
             "Krita - [Snap]")
                 sudo snap install krita
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -663,14 +733,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "LibreOffice - [Flatpak]")
                 flatpak install flathub org.libreoffice.LibreOffice
+                bash scripts/app.sh
                 break
                 ;;
             "LibreOffice - [Snap]")
                 sudo snap install libreoffice
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -693,12 +766,14 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Mainline Kernel - [Ubuntu]")
                 sudo add-apt-repository ppa:cappelikan/ppa
             	sudo apt update
             	sudo apt install mainline
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -722,14 +797,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "MediaInfo - [Flatpak]")
                 flatpak install flathub net.mediaarea.MediaInfo
+                bash scripts/app.sh
                 break
                 ;;
             "MediaInfo - [Snap]")
                 sudo snap install mediainfo
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -753,14 +831,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "AppEditor - [Flatpak]")
                 flatpak install flathub com.github.donadigo.appeditor
+                bash scripts/app.sh
                 break
                 ;;
             "MenuLibre - [Ubuntu]")
                 sudo apt install menulibre
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -784,17 +865,20 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "NextCloud Client - [Flatpak]")
                 flatpak install flathub org.nextcloud.Nextcloud
                 #flatpak override --user --own-name=org.kde.* org.nextcloud.Nextcloud
+                bash scripts/app.sh
                 break
                 ;;
             "NextCloud Client Dev - [Ubuntu]")
                 sudo add-apt-repository ppa:nextcloud-devs/client
                 sudo apt update
                 sudo apt install nextcloud-client nextcloud-client-nautilus nautilus-nextcloud
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -818,14 +902,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "OnlyOffice - [Snap]")
                 sudo snap install onlyoffice-desktopeditors
+                bash scripts/app.sh
                 break
                 ;;
             "OnlyOffice - [Flatpak] (Polices manquantes)")
                 flatpak install org.onlyoffice.desktopeditors
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -853,30 +940,37 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Arranger - [Flatpak]")
                 flatpak install flathub com.github.jeromerobert.pdfarranger
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Mix Tool - [Flatpak]")
                 flatpak install flathub eu.scarpetta.PDFMixTool
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Mix Tool - [Snap]")
                 sudo snap install pdfmixtool
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Okular - [Flatpak]")
                 flatpak install org.kde.okular
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Okular - [Snap]")
                 sudo snap install okular
+                bash scripts/app.sh
                 break
                 ;;
             "PDF Slicer - [Flatpak]")
                 flatpak install flathub com.github.junrrein.PDFSlicer
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -899,10 +993,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Piper - [Flatpak]")
                 flatpak install flathub org.freedesktop.Piper
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -925,10 +1021,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Plex Player - [URL]")
                 xdg-open https://knapsu.eu/plex/
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -952,21 +1050,25 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "ProtonVPN - [URL]")
                 xdg-open https://protonvpn.com/support/official-linux-client/
                 xdg-open https://protonvpn.com/support/knowledge-base/official-linux-client
+                bash scripts/app.sh
                 break
                 ;;
             # "ProtonVPN - [Fedora]")
             #     sudo wget -q -O - https://repo.protonvpn.com/debian/public_key.asc | sudo apt-key add - && sudo add-apt-repository 'deb [arch=amd64] https://repo.protonvpn.com/debian unstable main'
             #     sudo apt-get update && sudo apt-get install protonvpn
-            #     break
+            #     bash scripts/app.sh
+            # break
             #     ;;
             "Désinstaller ProtonVPN PIP3 - [Ubuntu]")
                 sudo pip3 uninstall protonvpn-cli
                 sudo apt autoremove --purge dialog python3-pip python3-setuptools
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -991,14 +1093,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "PO Poedit - [Flatpak]")
                 flatpak install flathub net.poedit.Poedit
+                bash scripts/app.sh
                 break
                 ;;
             "PO Gtranslator- [Flatpak]")
                 flatpak install flathub org.gnome.Gtranslator
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1022,14 +1127,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Mousai - [Flatpak]")
                 flatpak install flathub io.github.seadve.Mousai
+                bash scripts/app.sh
                 break
                 ;;
             "SongRec - [Flatpak]")
                 flatpak install flathub com.github.marinm.songrec
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1053,14 +1161,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Skype - [Flatpak]")
                 flatpak install flathub com.skype.Client
+                bash scripts/app.sh
                 break
                 ;;
             "Skype - [Snap]")
                 sudo snap install skype --classic
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1084,16 +1195,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "SpeedTest - [Ubuntu]")
                 sudo apt install speedtest-cli
                 pip install speedtest-cli
+                bash scripts/app.sh
                 break
                 ;;
             "SpeedTest - [Fedora]")
                 sudo dnf install speedtest-cli
                 pip install speedtest-cli
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1117,14 +1231,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Spotify - [Flatpak]")
                 flatpak install com.spotify.Client
+                bash scripts/app.sh
                 break
                 ;;
             "Spotify - [Snap]")
                 sudo snap install spotify
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1148,14 +1265,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Stacer - [Ubuntu]")
                 sudo apt install stacer
+                bash scripts/app.sh
                 break
                 ;;
             "Stacer - [Fedora]")
                 sudo dnf install stacer
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1179,14 +1299,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Telegram - [Flatpak]")
                 flatpak install org.telegram.desktop
+                bash scripts/app.sh
                 break
                 ;;
             "Telegram - [Snap]")
                 sudo snap install telegram-desktop
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1214,10 +1337,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Guake (Xorg) - [Ubuntu]")
                 sudo apt install guake
+                bash scripts/app.sh
                 break
                 ;;
             "Tilix - [Ubuntu]")
@@ -1229,6 +1354,7 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
+                bash scripts/app.sh
                 break
                 ;;
             "Tilix - [Fedora]")
@@ -1240,12 +1366,14 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
+                bash scripts/app.sh
                 break
                 ;;
             "StarShip - [Snap]")
                 sudo snap install starship
                 echo 'eval "$(starship init bash)"'
                 cp /tmp/mw_tools/ressources/scripts/configs/starship.toml ~/.config/starship.toml
+                bash scripts/app.sh
                 break
                 ;;
             "Powerline - [Ubuntu]")
@@ -1257,6 +1385,7 @@ Veuillez faire un choix : '
         source /usr/share/powerline/bindings/bash/powerline.sh
     fi
                 '
+                bash scripts/app.sh
                 break
                 ;;
             "Powerline - [Fedora]")
@@ -1271,6 +1400,7 @@ Veuillez faire un choix : '
       . /usr/share/powerline/bash/powerline.sh
     fi
                 '
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1294,16 +1424,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Timeshift - [Ubuntu]")
                 sudo add-apt-repository -y ppa:teejee2008/timeshift
                 sudo apt-get update
                 sudo apt-get install timeshift
+                bash scripts/app.sh
                 break
                 ;;
             "Timeshift - [Fedora]")
                 sudo dnf install timeshift
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1326,14 +1459,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "qBittorrent - [Flatpak]")
                 flatpak install flathub org.qbittorrent.qBittorrent
+                bash scripts/app.sh
                 break
                 ;;
             "Transmission - [Flatpak]")
                 flatpak install flathub com.transmissionbt.Transmission
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1355,10 +1491,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Touchegg - [URL]")
                 xdg-open https://github.com/JoseExposito/touchegg/releases
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1382,14 +1520,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "Uget - [Ubuntu]")
                 sudo apt install uget
+                bash scripts/app.sh
                 break
                 ;;
             "Uget - [Fedora]")
                 sudo dnf install uget
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1412,10 +1553,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "VirtualBox - [URL]")
                 xdg-open https://www.virtualbox.org/wiki/Downloads
+                bash scripts/app.sh
                 break
                 ;;
             "VirtualBox + ExtPack par Oracle - [Ubuntu]")
@@ -1428,6 +1571,7 @@ Veuillez faire un choix : '
                 sudo apt-get install virtualbox-6.1 &&
                 wget https://download.virtualbox.org/virtualbox/6.1.6/Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack &&
                 sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1451,14 +1595,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "VLC - [Flatpak]")
                 flatpak install flathub org.videolan.VLC
+                bash scripts/app.sh
                 break
                 ;;
             "VLC - [Snap]")
                 sudo snap install vlc
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
@@ -1482,14 +1629,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
                 break
                 ;;
             "VScode - [Flatpak]")
                 flatpak install flathub com.visualstudio.code
+                bash scripts/app.sh
                 break
                 ;;
             "VScode - [Snap]")
                 sudo snap install code --classic
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
