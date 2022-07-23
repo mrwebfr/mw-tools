@@ -584,6 +584,39 @@ Veuillez faire un choix : '
 }
 
 ##############################
+# Hypnotix
+##############################
+function app_hypnotix {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "Installer Hypnotix"
+    "Supprimer Hypnotix"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                break
+                ;;
+            "Installer Hypnotix")
+                sudo add-apt-repository ppa:kelebek333/mint-tools
+                sudo apt install hypnotix
+                break
+                ;;
+            "Supprimer Hypnotix")
+                sudo apt autoremove --purge hypnotix
+                sudo add-apt-repository --remove ppa:kelebek333/mint-tools
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
 # Krita
 ##############################
 function app_krita {
@@ -1433,9 +1466,8 @@ Veuillez faire un choix : '
     done
 }
 
-
 ##############################
-# VLC
+# VSCODE
 ##############################
 function app_vscode {
     PS3='

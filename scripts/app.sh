@@ -19,6 +19,7 @@ Veuillez faire un choix : '
     "Developpement"
     "Filezilla"
     "Github Desktop"
+    "Hypnotix"
     "Krita"
     "LibreOffice"
     "Mainline Kernel"
@@ -114,14 +115,14 @@ Veuillez faire un choix : '
                 app_flameshot
                 break
                 ;;
-            # "Flash Player")
-            #     clear && banner
-            #     app_adobe-flashplugin
-            #     break
-            #     ;;
             "Github Desktop")
                 clear && banner
                 app_git
+                break
+                ;;
+            "Hypnotix")
+                clear && banner
+                app_hypnotix
                 break
                 ;;
             "Krita")
