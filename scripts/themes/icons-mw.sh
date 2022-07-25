@@ -38,8 +38,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash setup.sh
-                bash scripts/app.sh
+                source setup.sh
                 break
                 ;;
             "Installer / Mise à jour")
@@ -48,14 +47,16 @@ Veuillez faire un choix : '
                 gsettings set org.gnome.desktop.interface icon-theme "Humanity"
                 sleep 1s
                 gsettings set org.gnome.desktop.interface icon-theme "Mrweb-Flat-SkyBlue"
-                bash scripts/app.sh
+                wait
+                source setup.sh
                 break
                 ;;
             "Supprimer")
                 clear
                 icons_remove_MW-Blue
                 gsettings set org.gnome.desktop.interface icon-theme "Humanity"
-                bash scripts/app.sh
+                wait
+                source setup.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;

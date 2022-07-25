@@ -32,6 +32,8 @@ Veuillez faire un choix : '
                 ;;
             "Flatpak Themes")
                 flatpak override --user --filesystem=xdg-config/gtk-4.0 --filesystem=home/.themes/
+                wait
+                source setup.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
