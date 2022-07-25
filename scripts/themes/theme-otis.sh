@@ -49,16 +49,19 @@ Veuillez faire un choix : '
         case $opt in
             "Retour")
                 bash setup.sh
+                bash scripts/app.sh
                 break
                 ;;
             "Installer / Mise à jour")
                 clear
                 theme_install_otis
+                bash scripts/app.sh
                 break
                 ;;
             "Supprimer")
                 clear
                 theme_remove_otis
+                bash scripts/app.sh
                 break
                 ;;
             *) echo "invalid option $REPLY";;
