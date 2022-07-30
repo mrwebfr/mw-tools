@@ -57,7 +57,7 @@ function clean_full {
         find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
         find ~/ -type d -iname 'cache' | xargs rm -rf;
         find ~/.var -type d -iname '.cache' | xargs rm -rf;
-        find ~/snap -type d -iname '.cache' | xargs rm -rf;
+        # find ~/snap -type d -iname '.cache' | xargs rm -rf;
         find ~/.cache/* -maxdepth 1 ! -name 'pvpn*' ! -name 'proton*' | xargs rm -rf;
         find ~/ -type d -iname 'caches' | xargs rm -rf;
         find ~/ -type d -iname '.caches' | xargs rm -rf;
@@ -86,7 +86,7 @@ function clean_full {
         find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
         find ~/ -type d -iname 'cache' | xargs rm -rf;
         find ~/.var -type d -iname '.cache' | xargs rm -rf;
-        find ~/snap -type d -iname '.cache' | xargs rm -rf;
+        # find ~/snap -type d -iname '.cache' | xargs rm -rf;
         find ~/ -type d -iname 'caches' | xargs rm -rf;
         find ~/ -type d -iname '.caches' | xargs rm -rf;
         find ~/ -type d -iname 'media_cache' | xargs rm -rf;
