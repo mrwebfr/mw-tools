@@ -1,0 +1,33 @@
+format = """
+(fg:#d00b0b)\
+$time\
+(fg:#3f7caa)\
+$directory\
+[\n-> ](fg:#d00b0b)\
+"""
+
+add_newline = true
+
+[username]
+show_always = true
+style_user = "fg:#d00b0b"
+style_root = "fg:#d00b0b"
+format = '[$user ]($style)'
+
+[directory]
+style = "fg:#ff9900"
+format = "[ $path ]($style)"
+truncation_length = 10
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[time]
+disabled = false
+style = "fg:#d00b0b"
+time_format = "%H:%M:%S"
+format = '[[$time](fg:#d00b0b)]($style)'
