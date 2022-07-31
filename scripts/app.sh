@@ -34,10 +34,10 @@ Veuillez faire un choix : '
     "ProtonVPN"
     "Shazam"
     "Skype"
-    "Snapcraft"
     "SpeedTest"
     "Spotify"
     "Stacer"
+    "Starship"
     "Telegram"
     "Terminal"
     "Timeshift"
@@ -216,11 +216,6 @@ Veuillez faire un choix : '
                 app_speedtest
                 break
                 ;;
-            "Snapcraft")
-                clear && banner
-                app_snapcraft
-                break
-                ;;
             "Spotify")
                 clear && banner
                 app_spotify
@@ -229,6 +224,11 @@ Veuillez faire un choix : '
             "Stacer")
                 clear && banner
                 app_stacer
+                break
+                ;;
+            "Starship")
+                clear && banner
+                app_starship
                 break
                 ;;
             "Telegram")

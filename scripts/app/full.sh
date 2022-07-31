@@ -1300,14 +1300,14 @@ Veuillez faire un choix : '
 }
 
 ##############################
-# Snapcraft
+# Starship
 ##############################
 function app_starship {
     PS3='
 Veuillez faire un choix : '
     options=(
     "Retour"
-    "Snapcraft - [URL]"
+    "Starship - [URL]"
     "Copier la config"
     )
 
@@ -1318,8 +1318,8 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
-            "Snapcraft - [URL]")
-                xdg-open https://snapcraft.io/starship
+            "Starship - [URL]")
+                xdg-open https://Starship.io/starship
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
