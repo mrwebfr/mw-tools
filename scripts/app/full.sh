@@ -1319,7 +1319,7 @@ Veuillez faire un choix : '
                 break
                 ;;
             "Starship - [URL]")
-                xdg-open https://Starship.io/starship
+                xdg-open https://snapcraft.io/starship
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
