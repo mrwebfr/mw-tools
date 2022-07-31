@@ -1302,7 +1302,7 @@ Veuillez faire un choix : '
 ##############################
 # Snapcraft
 ##############################
-function app_snapcraft {
+function app_starship {
     PS3='
 Veuillez faire un choix : '
     options=(
