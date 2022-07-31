@@ -18,7 +18,10 @@ nautilus-open='<Primary><Alt>t'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 background-transparency-percent=9
+cell-width-scale=1.0
+font='Monospace 12'
 foreground-color='#686885859F9F'
 palette=['#272729293434', '#8F8F59590202', '#D0D00A0A0A0A', '#C4C4A0A00000', '#272729293434', '#757550507B7B', '#060697979A9A', '#D3D3D7D7CFCF', '#555557575353', '#E9E9B9B96E6E', '#D0D00A0A0A0A', '#FCFCAFAF3E3E', '#474758586262', '#ADAD7F7FA8A8', '#3434E2E2E2E2', '#EEEEEEEEECEC']
+use-system-font=false
 use-theme-colors=false
 visible-name='Par défaut'
