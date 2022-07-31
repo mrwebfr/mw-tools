@@ -23,7 +23,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -130,7 +129,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -229,7 +227,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -271,7 +268,6 @@ do
     case $opt in
         "Retour")
             clear
-            read -e -i "" -p "Entrer pour continuer : " choice
             bash scripts/app.sh
             break
             ;;
@@ -302,7 +298,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -333,7 +328,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -370,7 +364,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -407,7 +400,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -446,7 +438,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -506,7 +497,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -536,7 +526,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -566,7 +555,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -606,7 +594,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -696,7 +683,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -727,7 +713,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -766,7 +751,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -803,7 +787,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -839,7 +822,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -872,7 +854,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -909,7 +890,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -946,7 +926,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -986,7 +965,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1027,7 +1005,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1087,7 +1064,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1117,7 +1093,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1148,7 +1123,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1195,7 +1169,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1232,7 +1205,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1269,7 +1241,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1306,7 +1277,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1345,7 +1315,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1382,7 +1351,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1419,7 +1387,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1456,7 +1423,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1497,7 +1463,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1591,7 +1556,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1629,7 +1593,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1664,7 +1627,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1695,7 +1657,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1731,7 +1692,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1776,7 +1736,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1813,7 +1772,6 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
