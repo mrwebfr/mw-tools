@@ -1164,7 +1164,7 @@ Veuillez faire un choix : '
             #     sudo apt-get update && sudo apt-get install protonvpn
             #     bash scripts/app.sh
             # read -e -i "" -p "Entrer pour continuer : " choice
-            source setup.sh
+            # source setup.sh
             #     ;;
             "Désinstaller ProtonVPN PIP3 - [Ubuntu]")
                 sudo pip3 uninstall protonvpn-cli
