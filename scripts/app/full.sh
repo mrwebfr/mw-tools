@@ -1216,6 +1216,34 @@ Veuillez faire un choix : '
 }
 
 ##############################
+# Snapcraft
+##############################
+function app_snapcraft {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "Snapcraft - [URL]"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Snapcraft - [URL]")
+                xdg-open https://snapcraft.io/starship
+                bash scripts/app.sh
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
 # Spotify
 ##############################
 function app_spotify {
