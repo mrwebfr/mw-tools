@@ -29,6 +29,7 @@ do
             clear
             cp -r /tmp/mw_tools/ressources/scripts/themes ~/.mw_tools/themes
             chmod +x ~/.mw_tools/themes/*
+            bash scripts/app.sh
             break
             ;;
         "keybindings Dump")
@@ -39,12 +40,14 @@ do
             clear
             dconf dump /org/gnome/desktop/wm/keybindings/ > ~/.mw_tools/keybindings/wm-keybindings.dconf.bak
             dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > ~/.mw_tools/keybindings/media-keys-keybindings.dconf.bak
+            bash scripts/app.sh
             break
             ;;
         "keybindings Load")
             clear
             dconf load /org/gnome/desktop/wm/keybindings/ < /tmp/mw_tools/ressources/scripts/keybindings/wm-keybindings.dconf.bak
             dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/mw_tools/ressources/scripts/keybindings/media-keys-keybindings.dconf.bak
+            bash scripts/app.sh
             break
             ;;
         "Tilix Dump")
@@ -54,16 +57,19 @@ do
             rm -r ~/.mw_tools/config/*
             clear
             dconf dump /com/gexperts/Tilix/ > ~/.mw_tools/config/tilix.dconf.bak
+            bash scripts/app.sh
             break
             ;;
         "Tilix Load")
             clear
             dconf load /com/gexperts/Tilix/ < /tmp/mw_tools/ressources/scripts/configs/tilix.dconf.bak
+            bash scripts/app.sh
             break
             ;;
         "LibreOffice Flatpak Launcher light")
             clear
             cp /tmp/mw_tools/ressources/applications/org.libreoffice* ~/.local/share/applications
+            bash scripts/app.sh
             break
             ;;
         # "Backgrounds")
