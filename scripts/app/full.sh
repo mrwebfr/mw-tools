@@ -1224,6 +1224,7 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Snapcraft - [URL]"
+    "Copier la config"
     )
 
     select opt in "${options[@]}"
@@ -1235,6 +1236,11 @@ Veuillez faire un choix : '
                 ;;
             "Snapcraft - [URL]")
                 xdg-open https://snapcraft.io/starship
+                bash scripts/app.sh
+                break
+                ;;
+            "Copier la config")
+                cp /tmp/mw_tools/ressources/scripts/starship.toml ~/.config/starship.toml
                 bash scripts/app.sh
                 break
                 ;;
