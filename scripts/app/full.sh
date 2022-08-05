@@ -9,14 +9,14 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Paquets utiles - [Ubuntu]"
-    "Compatibilités médias - [Ubuntu]"
     "Flatpak - [Ubuntu] (Redémarrage)"
     "Flatpak Beta - [Ubuntu]"
-    "Pilotes Nvidia PPA - [Ubuntu]"
-    "ZRam - [Ubuntu]"
+    "Compatibilités médias - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
+    "Pilotes Nvidia PPA - [Ubuntu]"
+    "ZRam - [Ubuntu]"
     # "EarlyOOM (Ram) - [Ubuntu]"
     )
 
