@@ -9,14 +9,15 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Paquets utiles - [Ubuntu]"
+    "Compatibilités médias - [Ubuntu]"
     "Flatpak - [Ubuntu] (Redémarrage)"
     "Flatpak Beta - [Ubuntu]"
     "Pilotes Nvidia PPA - [Ubuntu]"
     "ZRam - [Ubuntu]"
-    "EarlyOOM (Ram) - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
+    # "EarlyOOM (Ram) - [Ubuntu]"
     )
 
     select opt in "${options[@]}"
@@ -28,6 +29,12 @@ Veuillez faire un choix : '
                 ;;
             "Paquets utiles - [Ubuntu]")
                 sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            "Compatibilités médias - [Ubuntu]")
+                sudo apt install heif-gdk-pixbuf heif-thumbnailer
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
@@ -67,12 +74,6 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
-            "EarlyOOM (Ram) - [Ubuntu]")
-                sudo apt install earlyoom
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
-                ;;
             "Codecs multimédias essentiels - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt install ubuntu-restricted-extras
@@ -99,6 +100,12 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
+            # "EarlyOOM (Ram) - [Ubuntu]")
+            #     sudo apt install earlyoom
+            #     read -e -i "" -p "Entrer pour continuer : " choice
+            #     bash scripts/app.sh
+            #     break
+            #     ;;
             *) echo "invalid option $REPLY";;
         esac
     done
