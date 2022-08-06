@@ -11,12 +11,13 @@ Veuillez faire un choix : '
     "Paquets utiles - [Ubuntu]"
     "Flatpak - [Ubuntu] (Redémarrage)"
     "Flatpak Beta - [Ubuntu]"
-    "Pilotes Nvidia PPA - [Ubuntu]"
-    "ZRam - [Ubuntu]"
-    "EarlyOOM (Ram) - [Ubuntu]"
+    "Compatibilités médias - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
+    "Pilotes Nvidia PPA - [Ubuntu]"
+    "ZRam - [Ubuntu]"
+    # "EarlyOOM (Ram) - [Ubuntu]"
     )
 
     select opt in "${options[@]}"
@@ -28,6 +29,13 @@ Veuillez faire un choix : '
                 ;;
             "Paquets utiles - [Ubuntu]")
                 sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            "Compatibilités médias - [Ubuntu]")
+                sudo apt install heif-gdk-pixbuf heif-thumbnailer
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -35,18 +43,21 @@ Veuillez faire un choix : '
                 sudo apt install -y flatpak gnome-software-plugin-flatpak
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flatpak Beta - [Ubuntu]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Pilotes Nvidia PPA - [Ubuntu]")
                 sudo add-apt-repository ppa:graphics-drivers/ppa
                 sudo apt update
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -59,17 +70,14 @@ Veuillez faire un choix : '
     à
     mem=$(((totalmem * 2 / ${NRDEVICES}) * 1024))
     '
-                bash scripts/app.sh
-                break
-                ;;
-            "EarlyOOM (Ram) - [Ubuntu]")
-                sudo apt install earlyoom
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Codecs multimédias essentiels - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt install ubuntu-restricted-extras
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -77,6 +85,7 @@ Veuillez faire un choix : '
                 sudo add-apt-repository multiverse
                 sudo apt update && sudo apt install ttf-mscorefonts-installer
                 sudo fc-cache -f -v
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -87,9 +96,16 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
+            # "EarlyOOM (Ram) - [Ubuntu]")
+            #     sudo apt install earlyoom
+            #     read -e -i "" -p "Entrer pour continuer : " choice
+            #     bash scripts/app.sh
+            #     break
+            #     ;;
             *) echo "invalid option $REPLY";;
         esac
     done
@@ -125,23 +141,27 @@ Veuillez faire un choix : '
                 ;;
             "Paquets utiles - [Fedora]")
                 sudo dnf install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flatpak - [Fedora]")
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flatpak Beta - [Fedora]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Snap - [Fedora]")
                 app_snap
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -149,6 +169,7 @@ Veuillez faire un choix : '
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-free-appstream-data
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -156,6 +177,7 @@ Veuillez faire un choix : '
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-nonfree-appstream-data
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -163,17 +185,20 @@ Veuillez faire un choix : '
                 sudo dnf install gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly
                 sudo dnf install gstreamer1-plugins-{base,good,bad-free,good-extras,bad-free-extras} gstreamer1-plugin-mpg123
                 sudo dnf install gstreamer1-libav gstreamer1-plugins-{bad-freeworld,ugly}
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "NCDU (disk space) - [Fedora]")
                 sudo dnf install ncdu
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Microsoft fonts - [Fedora DNF]")
                 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
                 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -184,6 +209,7 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -214,11 +240,13 @@ Veuillez faire un choix : '
             "Snap - [Fedora]")
                 sudo dnf install snapd
                 sudo ln -s /var/lib/snapd/snap /snap
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Snap store - [Snap]")
                 sudo snap install snap-store
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -253,6 +281,7 @@ do
         "Flash Player - [Ubuntu]")
             clear
             sudo apt install adobe-flashplugin
+            read -e -i "" -p "Entrer pour continuer : " choice
             bash scripts/app.sh
             break
             ;;
@@ -281,6 +310,7 @@ Veuillez faire un choix : '
                 ;;
             "Anydesk - [Flatpak]")
                 flatpak install flathub com.anydesk.Anydesk
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -310,11 +340,13 @@ Veuillez faire un choix : '
                 ;;
             "Atom - [Flatpak]")
                 flatpak install io.atom.Atom
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Atom - [Snap]")
                 sudo snap install atom --classic
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -344,11 +376,13 @@ Veuillez faire un choix : '
                 ;;
             "Audacity - [Flatpak]")
                 flatpak install flathub org.audacityteam.Audacity
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Audacity - [Snap]")
                 sudo snap install audacity
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -378,11 +412,13 @@ Veuillez faire un choix : '
                 ;;
             "Bitwarden - [Flatpak]")
                 flatpak install com.bitwarden.desktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Bitwarden - [Snap]")
                 sudo snap install bitwarden
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -414,31 +450,37 @@ Veuillez faire un choix : '
                 ;;
             "Flameshot - [Ubuntu]")
                 sudo apt install flameshot
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Fedora]")
                 sudo dnf install flameshot
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Snap]")
                 sudo snap install flameshot
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Flameshot - [Flatpak]")
                 flatpak install flathub org.flameshot.Flameshot
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "SimpleScreenRecorder - [Snap]")
                 sudo snap install simplescreenrecorder
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Kooha - [Flatpak]")
                 flatpak install flathub io.github.seadve.Kooha
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -467,6 +509,7 @@ Veuillez faire un choix : '
                 ;;
             "Coolero - [Flatpak]")
                 flatpak install flathub org.coolero.Coolero
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -495,6 +538,7 @@ Veuillez faire un choix : '
                 ;;
             "Detwinner (Duplicate) - [Flatpak]")
                 flatpak install flathub com.neatdecisions.Detwinner
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -523,6 +567,7 @@ Veuillez faire un choix : '
                 ;;
             "Filezilla - [Flatpak]")
                 flatpak install flathub org.filezillaproject.Filezilla
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -561,56 +606,67 @@ Veuillez faire un choix : '
                 ;;
             "Firefox - [Snap]")
                 sudo snap install firefox
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Firefox Beta - [Snap]")
                 sudo snap install firefox --beta
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Firefox Nightly- [Snap]")
                 sudo snap install firefox --edge
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Firefox - [Flatpak]")
                 flatpak install flathub org.mozilla.firefox
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Firefox Beta - [Flatpak]")
                 flatpak install --user https://flathub.org/beta-repo/appstream/org.mozilla.firefox.flatpakref
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Brave - [Flatpak]")
                 flatpak install flathub com.brave.Browser
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Brave - [Snap]")
                 sudo snap install brave
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Chrome - [Flatpak]")
                 flatpak install flathub com.google.Chrome
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Chromium - [Snap]")
                 sudo snap install chromium
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Chromium - [Flatpak]")
                 flatpak install flathub org.chromium.Chromium
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Opera - [Snap]")
                 sudo snap install opera
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -639,6 +695,7 @@ Veuillez faire un choix : '
                 ;;
             "Github Desktop - [URL]")
                 xdg-open https://github.com/shiftkey/desktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -669,12 +726,14 @@ Veuillez faire un choix : '
             "Installer Hypnotix")
                 sudo add-apt-repository ppa:kelebek333/mint-tools
                 sudo apt install hypnotix
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Supprimer Hypnotix")
                 sudo apt autoremove --purge hypnotix
                 sudo add-apt-repository --remove ppa:kelebek333/mint-tools
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -704,11 +763,13 @@ Veuillez faire un choix : '
                 ;;
             "Krita - [Flatpak]")
                 flatpak install flathub org.kde.krita
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Krita - [Snap]")
                 sudo snap install krita
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -738,11 +799,13 @@ Veuillez faire un choix : '
                 ;;
             "LibreOffice - [Flatpak]")
                 flatpak install flathub org.libreoffice.LibreOffice
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "LibreOffice - [Snap]")
                 sudo snap install libreoffice
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -773,6 +836,7 @@ Veuillez faire un choix : '
                 sudo add-apt-repository ppa:cappelikan/ppa
             	sudo apt update
             	sudo apt install mainline
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -802,11 +866,13 @@ Veuillez faire un choix : '
                 ;;
             "MediaInfo - [Flatpak]")
                 flatpak install flathub net.mediaarea.MediaInfo
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "MediaInfo - [Snap]")
                 sudo snap install mediainfo
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -836,11 +902,13 @@ Veuillez faire un choix : '
                 ;;
             "AppEditor - [Flatpak]")
                 flatpak install flathub com.github.donadigo.appeditor
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "MenuLibre - [Ubuntu]")
                 sudo apt install menulibre
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -871,6 +939,7 @@ Veuillez faire un choix : '
             "NextCloud Client - [Flatpak]")
                 flatpak install flathub org.nextcloud.Nextcloud
                 #flatpak override --user --own-name=org.kde.* org.nextcloud.Nextcloud
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -878,6 +947,7 @@ Veuillez faire un choix : '
                 sudo add-apt-repository ppa:nextcloud-devs/client
                 sudo apt update
                 sudo apt install nextcloud-client nextcloud-client-nautilus nautilus-nextcloud
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -907,11 +977,13 @@ Veuillez faire un choix : '
                 ;;
             "OnlyOffice - [Snap]")
                 sudo snap install onlyoffice-desktopeditors
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "OnlyOffice - [Flatpak] (Polices manquantes)")
                 flatpak install org.onlyoffice.desktopeditors
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -945,31 +1017,37 @@ Veuillez faire un choix : '
                 ;;
             "PDF Arranger - [Flatpak]")
                 flatpak install flathub com.github.jeromerobert.pdfarranger
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PDF Mix Tool - [Flatpak]")
                 flatpak install flathub eu.scarpetta.PDFMixTool
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PDF Mix Tool - [Snap]")
                 sudo snap install pdfmixtool
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PDF Okular - [Flatpak]")
                 flatpak install org.kde.okular
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PDF Okular - [Snap]")
                 sudo snap install okular
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PDF Slicer - [Flatpak]")
                 flatpak install flathub com.github.junrrein.PDFSlicer
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -998,6 +1076,7 @@ Veuillez faire un choix : '
                 ;;
             "Piper - [Flatpak]")
                 flatpak install flathub org.freedesktop.Piper
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1026,6 +1105,7 @@ Veuillez faire un choix : '
                 ;;
             "Plex Player - [URL]")
                 xdg-open https://knapsu.eu/plex/
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1056,18 +1136,21 @@ Veuillez faire un choix : '
             "ProtonVPN - [URL]")
                 xdg-open https://protonvpn.com/support/official-linux-client/
                 xdg-open https://protonvpn.com/support/knowledge-base/official-linux-client
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             # "ProtonVPN - [Fedora]")
             #     sudo wget -q -O - https://repo.protonvpn.com/debian/public_key.asc | sudo apt-key add - && sudo add-apt-repository 'deb [arch=amd64] https://repo.protonvpn.com/debian unstable main'
             #     sudo apt-get update && sudo apt-get install protonvpn
-            #     bash scripts/app.sh
+            #     read -e -i "" -p "Entrer pour continuer : " choice
+            # bash scripts/app.sh
             # break
             #     ;;
             "Désinstaller ProtonVPN PIP3 - [Ubuntu]")
                 sudo pip3 uninstall protonvpn-cli
                 sudo apt autoremove --purge dialog python3-pip python3-setuptools
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1098,11 +1181,13 @@ Veuillez faire un choix : '
                 ;;
             "PO Poedit - [Flatpak]")
                 flatpak install flathub net.poedit.Poedit
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "PO Gtranslator- [Flatpak]")
                 flatpak install flathub org.gnome.Gtranslator
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1132,11 +1217,13 @@ Veuillez faire un choix : '
                 ;;
             "Mousai - [Flatpak]")
                 flatpak install flathub io.github.seadve.Mousai
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "SongRec - [Flatpak]")
                 flatpak install flathub com.github.marinm.songrec
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1166,11 +1253,13 @@ Veuillez faire un choix : '
                 ;;
             "Skype - [Flatpak]")
                 flatpak install flathub com.skype.Client
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Skype - [Snap]")
                 sudo snap install skype --classic
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1201,12 +1290,50 @@ Veuillez faire un choix : '
             "SpeedTest - [Ubuntu]")
                 sudo apt install speedtest-cli
                 pip install speedtest-cli
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "SpeedTest - [Fedora]")
                 sudo dnf install speedtest-cli
                 pip install speedtest-cli
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
+# Starship
+##############################
+function app_starship {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "Starship - [URL]"
+    "Copier la config"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Starship - [URL]")
+                xdg-open https://snapcraft.io/starship
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            "Copier la config")
+                cp /tmp/mw_tools/ressources/scripts/starship.toml ~/.config/starship.toml
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1236,11 +1363,13 @@ Veuillez faire un choix : '
                 ;;
             "Spotify - [Flatpak]")
                 flatpak install com.spotify.Client
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Spotify - [Snap]")
                 sudo snap install spotify
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1270,11 +1399,13 @@ Veuillez faire un choix : '
                 ;;
             "Stacer - [Ubuntu]")
                 sudo apt install stacer
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Stacer - [Fedora]")
                 sudo dnf install stacer
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1304,11 +1435,13 @@ Veuillez faire un choix : '
                 ;;
             "Telegram - [Flatpak]")
                 flatpak install org.telegram.desktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Telegram - [Snap]")
                 sudo snap install telegram-desktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1342,6 +1475,7 @@ Veuillez faire un choix : '
                 ;;
             "Guake (Xorg) - [Ubuntu]")
                 sudo apt install guake
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1354,6 +1488,7 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1366,6 +1501,7 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1373,6 +1509,7 @@ Veuillez faire un choix : '
                 sudo snap install starship
                 echo 'eval "$(starship init bash)"'
                 cp /tmp/mw_tools/ressources/scripts/configs/starship.toml ~/.config/starship.toml
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1385,6 +1522,7 @@ Veuillez faire un choix : '
         source /usr/share/powerline/bindings/bash/powerline.sh
     fi
                 '
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1400,6 +1538,7 @@ Veuillez faire un choix : '
       . /usr/share/powerline/bash/powerline.sh
     fi
                 '
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1431,11 +1570,13 @@ Veuillez faire un choix : '
                 sudo add-apt-repository -y ppa:teejee2008/timeshift
                 sudo apt-get update
                 sudo apt-get install timeshift
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Timeshift - [Fedora]")
                 sudo dnf install timeshift
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1464,11 +1605,13 @@ Veuillez faire un choix : '
                 ;;
             "qBittorrent - [Flatpak]")
                 flatpak install flathub org.qbittorrent.qBittorrent
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Transmission - [Flatpak]")
                 flatpak install flathub com.transmissionbt.Transmission
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1496,6 +1639,7 @@ Veuillez faire un choix : '
                 ;;
             "Touchegg - [URL]")
                 xdg-open https://github.com/JoseExposito/touchegg/releases
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1525,11 +1669,13 @@ Veuillez faire un choix : '
                 ;;
             "Uget - [Ubuntu]")
                 sudo apt install uget
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "Uget - [Fedora]")
                 sudo dnf install uget
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1558,6 +1704,7 @@ Veuillez faire un choix : '
                 ;;
             "VirtualBox - [URL]")
                 xdg-open https://www.virtualbox.org/wiki/Downloads
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1571,6 +1718,7 @@ Veuillez faire un choix : '
                 sudo apt-get install virtualbox-6.1 &&
                 wget https://download.virtualbox.org/virtualbox/6.1.6/Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack &&
                 sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1600,11 +1748,13 @@ Veuillez faire un choix : '
                 ;;
             "VLC - [Flatpak]")
                 flatpak install flathub org.videolan.VLC
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "VLC - [Snap]")
                 sudo snap install vlc
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -1634,11 +1784,13 @@ Veuillez faire un choix : '
                 ;;
             "VScode - [Flatpak]")
                 flatpak install flathub com.visualstudio.code
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
             "VScode - [Snap]")
                 sudo snap install code --classic
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;

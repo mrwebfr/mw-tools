@@ -37,6 +37,7 @@ Veuillez faire un choix : '
     "SpeedTest"
     "Spotify"
     "Stacer"
+    "Starship"
     "Telegram"
     "Terminal"
     "Timeshift"
@@ -223,6 +224,11 @@ Veuillez faire un choix : '
             "Stacer")
                 clear && banner
                 app_stacer
+                break
+                ;;
+            "Starship")
+                clear && banner
+                app_starship
                 break
                 ;;
             "Telegram")
