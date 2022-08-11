@@ -28,7 +28,7 @@ Veuillez faire un choix : '
                 break
                 ;;
             "Paquets utiles - [Ubuntu]")
-                sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
+                sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon xdotool
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
