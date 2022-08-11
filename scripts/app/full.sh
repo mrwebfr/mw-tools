@@ -435,6 +435,7 @@ function app_capture {
 Veuillez faire un choix : '
     options=(
     "Retour"
+    "Flameshot - [Flatpak]"
     "Flameshot - [Ubuntu]"
     "Flameshot - [Fedora]"
     "SimpleScreenRecorder - [Snap]"
@@ -445,6 +446,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Flameshot - [Flatpak]")
+                flatpak install flathub org.flameshot.Flameshot
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -683,6 +690,7 @@ function app_git {
 Veuillez faire un choix : '
     options=(
     "Retour"
+    "Github Desktop - [Flatpak]"
     "Github Desktop - [URL]"
     )
 
@@ -690,6 +698,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Github Desktop - [Flatpak]")
+                flatpak install flathub io.github.shiftey.Desktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
@@ -712,8 +726,8 @@ function app_hypnotix {
 Veuillez faire un choix : '
     options=(
     "Retour"
-    "Installer Hypnotix"
-    "Supprimer Hypnotix"
+    "Installer Hypnotix - [APT Mint]"
+    "Supprimer Hypnotix - [APT Mint]"
     )
 
     select opt in "${options[@]}"
@@ -723,14 +737,14 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
-            "Installer Hypnotix")
+            "Installer Hypnotix - [APT Mint]")
                 sudo add-apt-repository ppa:kelebek333/mint-tools
                 sudo apt install hypnotix
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
-            "Supprimer Hypnotix")
+            "Supprimer Hypnotix - [APT Mint]")
                 sudo apt autoremove --purge hypnotix
                 sudo add-apt-repository --remove ppa:kelebek333/mint-tools
                 read -e -i "" -p "Entrer pour continuer : " choice
