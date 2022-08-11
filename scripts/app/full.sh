@@ -1107,6 +1107,7 @@ function app_plex {
 Veuillez faire un choix : '
     options=(
     "Retour"
+    "Plex Player - [Flatpak]"
     "Plex Player - [URL]"
     )
 
@@ -1114,6 +1115,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Plex Player - [Flatpak]")
+                flatpak install flathub tv.plex.PlexDesktop
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
