@@ -8,6 +8,7 @@ options=(
 "Themes"
 "keybindings Dump"
 "keybindings Load"
+"Terminal par défaut"
 "Tilix Dump"
 "Tilix Load"
 "LibreOffice Flatpak Launcher light"
@@ -45,6 +46,11 @@ do
             clear
             dconf load /org/gnome/desktop/wm/keybindings/ < /tmp/mw_tools/ressources/scripts/keybindings/wm-keybindings.dconf.bak
             dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/mw_tools/ressources/scripts/keybindings/media-keys-keybindings.dconf.bak
+            break
+            ;;
+        "Terminal par défaut")
+            clear
+            sudo update-alternatives --config x-terminal-emulator
             break
             ;;
         "Tilix Dump")
