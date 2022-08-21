@@ -12,6 +12,7 @@ Veuillez faire un choix : '
     "Flatpak - [Ubuntu] (Redémarrage)"
     "Flatpak Beta - [Ubuntu]"
     "Compatibilités médias - [Ubuntu]"
+    "VMware - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
@@ -35,6 +36,13 @@ Veuillez faire un choix : '
                 ;;
             "Compatibilités médias - [Ubuntu]")
                 sudo apt install heif-gdk-pixbuf heif-thumbnailer
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            "VMware - [Ubuntu]")
+                sudo apt install gcc build-essential
+                xdg-open https://www.vmware.com/fr/products/workstation-player/workstation-player-evaluation.html
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
