@@ -236,6 +236,7 @@ Veuillez faire un choix : '
                 clear && banner
                 app_teamviewer
                 break
+                ;;
             "Telegram")
                 clear && banner
                 app_telegram
