@@ -38,6 +38,7 @@ Veuillez faire un choix : '
     "Spotify"
     "Stacer"
     "Starship"
+    "Teamviewer"
     "Telegram"
     "Terminal"
     "Timeshift"
@@ -231,6 +232,10 @@ Veuillez faire un choix : '
                 app_starship
                 break
                 ;;
+            "Teamviewer")
+                clear && banner
+                app_teamviewer
+                break
             "Telegram")
                 clear && banner
                 app_telegram

@@ -1444,6 +1444,46 @@ Veuillez faire un choix : '
 }
 
 ##############################
+# Teamviewer
+##############################
+function app_teamviewer {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "Teamviewer Installation - [DEB]"
+    "Teamviewer Désinstallation - [DEB]"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                bash scripts/app.sh
+                break
+                ;;
+            "Teamviewer Installation - [DEB]")
+                cd /tmp
+                wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+                sudo apt install ./teamviewer_amd64.deb
+                rm teamviewer_amd64.deb
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            "Teamviewer Désinstallation - [DEB]")
+                sudo apt autoremove --purge teamviewer
+                sudo rm -rf /etc/apt/sources.list.d/teamviewer*
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
 # Telegram
 ##############################
 function app_telegram {
