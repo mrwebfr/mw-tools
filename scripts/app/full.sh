@@ -1467,6 +1467,7 @@ Veuillez faire un choix : '
                 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
                 sudo apt install ./teamviewer_amd64.deb
                 rm teamviewer_amd64.deb
+                cd /tmp/mw_tools/
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
