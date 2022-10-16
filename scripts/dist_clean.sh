@@ -60,7 +60,7 @@ function clean_full {
         echo ''
 
         # Home
-        find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
+        find ~/.thumbnails -type f -atime +1 2>/dev/null | xargs rm -rf;
         find ~/.cache/* -maxdepth 1 ! -name 'pvpn*' ! -name 'proton*' | xargs rm -rf;
         find ~/ -type d -iname 'cache' | xargs rm -rf;
         find ~/ -type d -iname 'caches' | xargs rm -rf;
