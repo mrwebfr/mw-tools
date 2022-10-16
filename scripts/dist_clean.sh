@@ -146,7 +146,7 @@ source scripts/functions.sh
 
 clear && banner
 
-clean
+clean_full
 
 wait
 
