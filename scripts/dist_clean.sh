@@ -55,23 +55,23 @@ function clean_full {
         sudo apt-get autoclean -y
 
         # Home
-        find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
-        find ~/.cache/* -maxdepth 1 ! -name 'pvpn*' ! -name 'proton*' | xargs rm -rf;
-        find ~/ -type d -iname 'cache' | xargs rm -rf;
-        find ~/ -type d -iname 'caches' | xargs rm -rf;
-        find ~/ -type d -iname '.caches' | xargs rm -rf;
-        find ~/ -type d -iname 'media_cache' | xargs rm -rf;
-        find ~/ -type d -iname '.DS_Store' | xargs rm -rf;
+        find ~/.thumbnails -type f -atime +1 | xargs rm -rfv;
+        find ~/.cache/* -maxdepth 1 ! -name 'pvpn*' ! -name 'proton*' | xargs rm -rfv;
+        find ~/ -type d -iname 'cache' | xargs rm -rfv;
+        find ~/ -type d -iname 'caches' | xargs rm -rfv;
+        find ~/ -type d -iname '.caches' | xargs rm -rfv;
+        find ~/ -type d -iname 'media_cache' | xargs rm -rfv;
+        find ~/ -type d -iname '.DS_Store' | xargs rm -rfv;
         find ~/.config/ -type d -empty -delete
-        find ~/ -type d -iname '*~' | xargs rm -rf;
+        find ~/ -type d -iname '*~' | xargs rm -rfv;
         
         # Flatpak
         flatpak uninstall --unused
         flatpak uninstall --delete-data -y
-        find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rfv;
         
         # Snap
-        find ~/snap -type d \( -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        find ~/snap -type d \( -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rfv;
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
 
         # END
