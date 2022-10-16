@@ -93,10 +93,11 @@ function clean_full {
         echo 'SNAP - Nettoyage cache OK'
         echo '-----------------------------'
         echo ''
-
-echo "
----
-Le PC est propre. "
+        echo ''
+        echo '-----------------------------'
+        echo 'Le PC est propre !'
+        echo '-----------------------------'
+        echo ''
 
         # find ~/snap -type d \( -path ~/snap/firefox \) -prune -o -name '.cache' -print
 
