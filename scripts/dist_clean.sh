@@ -75,7 +75,9 @@ function clean_full {
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
 
         # END
-        mwmessage="Le PC est propre. "
+echo "
+---
+Le PC est propre. "
 
         # find ~/snap -type d \( -path ~/snap/firefox \) -prune -o -name '.cache' -print
 
