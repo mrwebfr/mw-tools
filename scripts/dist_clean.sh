@@ -53,7 +53,11 @@ function clean_full {
         sudo apt-get autoremove --purge -y
         sudo apt-get clean -y
         sudo apt-get autoclean -y
+        echo ''
+        echo '-----------------------------'
         echo 'PC - APT Nettoyage OK'
+        echo '-----------------------------'
+        echo ''
 
         # Home
         find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
@@ -65,18 +69,30 @@ function clean_full {
         find ~/ -type d -iname '.DS_Store' | xargs rm -rf;
         find ~/.config/ -type d -empty -delete
         find ~/ -type d -iname '*~' | xargs rm -rf;
+        echo ''
+        echo '-----------------------------'
         echo 'HOME - Nettoyage cache OK'
+        echo '-----------------------------'
+        echo ''
         
         # Flatpak
         flatpak uninstall --unused
         flatpak uninstall --delete-data -y
         find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        echo ''
+        echo '-----------------------------'
         echo 'FLATPAK - Nettoyage cache OK'
+        echo '-----------------------------'
+        echo ''
         
         # Snap
         find ~/snap -type d \( -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
+        echo ''
+        echo '-----------------------------'
         echo 'SNAP - Nettoyage cache OK'
+        echo '-----------------------------'
+        echo ''
 
 echo "
 ---
