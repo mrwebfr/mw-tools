@@ -86,7 +86,7 @@ function clean_full {
         echo ''
         
         # Snap
-        find ~/snap -type d \( -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        find ~/snap -type d \( -path ~/snap/snapd-desktop-integration -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
         echo ''
         echo '-----------------------------'
