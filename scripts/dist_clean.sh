@@ -43,34 +43,41 @@ function clean_full {
 
     if [ "$OS" == "ubuntu" ]; then
         sudo apt remove popularity-contest -y
+
         # Clean Ubuntu
         if ! dpkg -s 'trash-cli' >/dev/null 2>&1; then
             sudo apt install trash-cli -y
         fi
         trash-empty
         rm -r -f ~/.local/share/Trash/files/*
-        sudo apt-get autoremove -y
+        sudo apt-get autoremove --purge -y
         sudo apt-get clean -y
         sudo apt-get autoclean -y
-        # sudo apt --purge autoremove -y
-        # sudo aptitude purge ~c -y
+
+        # Home
         find ~/.thumbnails -type f -atime +1 | xargs rm -rf;
-        find ~/ -type d -iname 'cache' | xargs rm -rf;
-        find ~/.var -type d -iname '.cache' | xargs rm -rf;
-        # find ~/snap -type d -iname '.cache' | xargs rm -rf;
         find ~/.cache/* -maxdepth 1 ! -name 'pvpn*' ! -name 'proton*' | xargs rm -rf;
+        find ~/ -type d -iname 'cache' | xargs rm -rf;
         find ~/ -type d -iname 'caches' | xargs rm -rf;
         find ~/ -type d -iname '.caches' | xargs rm -rf;
         find ~/ -type d -iname 'media_cache' | xargs rm -rf;
         find ~/ -type d -iname '.DS_Store' | xargs rm -rf;
         find ~/.config/ -type d -empty -delete
         find ~/ -type d -iname '*~' | xargs rm -rf;
-        # find ~/ -name '*~' -print0 | xargs rm -Rf
+        
+        # Flatpak
         flatpak uninstall --unused
         flatpak uninstall --delete-data -y
-        # sudo rm -rf /tmp/*
-        # find ~/ -type d \( ! -name .protonvpn-cli \) -prune -o -name '*~' | xargs rm -rf;
+        find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        
+        # Snap
+        find ~/snap -type d \( -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
+
+        # END
         mwmessage="Le PC est propre. "
+
+        # find ~/snap -type d \( -path ~/snap/firefox \) -prune -o -name '.cache' -print
 
     elif [ "$OS" == "fedora" ]; then
         
