@@ -60,6 +60,7 @@ Veuillez faire un choix : '
                 ;;
             "Snap Store - Supprimer [Snap]")
                 sudo snap remove snap-store
+                read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
