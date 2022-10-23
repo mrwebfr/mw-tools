@@ -90,11 +90,13 @@ Veuillez faire un choix : '
                 sudo apt-get install zram-config
                 sudo service zram-config start
                 echo '
+-----------------------------------------
     sudo nano /usr/bin/init-zram-swapping
-    mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024))
+    mem=$((totalmem / 2 * 1024))
     à
-    mem=$(((totalmem * 2 / ${NRDEVICES}) * 1024))
-    '
+    mem=$((totalmem * 2 * 1024))
+-----------------------------------------
+'
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
