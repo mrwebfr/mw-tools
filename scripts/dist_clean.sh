@@ -54,9 +54,9 @@ function clean_full {
         sudo apt-get clean -y
         sudo apt-get autoclean -y
         echo ''
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ' 1/4 | PC - APT Nettoyage OK'
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ''
 
         # Home
@@ -70,9 +70,9 @@ function clean_full {
         find ~/.config/ -type d -empty -delete
         find ~/ -type d -iname '*~' | xargs rm -rf;
         echo ''
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ' 2/4 | HOME - Nettoyage cache OK'
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ''
         
         # Flatpak
@@ -80,23 +80,23 @@ function clean_full {
         flatpak uninstall --delete-data -y
         find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
         echo ''
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ' 3/4 | FLATPAK - Nettoyage cache OK'
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ''
         
         # Snap
         find ~/snap -type d \( -path ~/snap/snapd-desktop-integration -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
         echo ''
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ' 4/4 | SNAP - Nettoyage cache OK'
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ''
         echo ''
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ' Le PC est propre !'
-        echo '-----------------------------'
+        echo '-----------------------------------'
         echo ''
 
         # find ~/snap -type d \( -path ~/snap/firefox \) -prune -o -name '.cache' -print
