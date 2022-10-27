@@ -9,14 +9,15 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Paquets utiles - [Ubuntu]"
-    "Flatpak - [Ubuntu] (Redémarrage)"
+    "Gnome Software + Flatpak - [Ubuntu]"
     "Flatpak Beta - [Ubuntu]"
+    "Snap Store - Supprimer [Snap]"
     "Compatibilités médias - [Ubuntu]"
-    "VMware - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
-    "Pilotes Nvidia PPA - [Ubuntu]"
+    "VMware - [Ubuntu]"
+    "Pilotes Nvidia PPA (ATTENTION !) - [Ubuntu]"
     "ZRam - [Ubuntu]"
     # "EarlyOOM (Ram) - [Ubuntu]"
     )
@@ -47,14 +48,30 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
-            "Flatpak - [Ubuntu] (Redémarrage)")
+            "Gnome Software + Flatpak - [Ubuntu]")
+                sudo apt install gnome-software
                 sudo apt install -y flatpak gnome-software-plugin-flatpak
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
+                killall gnome-software
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
                 ;;
+            "Snap Store - Supprimer [Snap]")
+                sudo snap remove snap-store
+                read -e -i "" -p "Entrer pour continuer : " choice
+                bash scripts/app.sh
+                break
+                ;;
+            # "Flatpak - [Ubuntu]")
+            #     sudo apt install -y flatpak gnome-software-plugin-flatpak
+            #     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+            #     flatpak update --appstream
+            #     read -e -i "" -p "Entrer pour continuer : " choice
+            #     bash scripts/app.sh
+            #     break
+            #     ;;
             "Flatpak Beta - [Ubuntu]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
@@ -62,7 +79,7 @@ Veuillez faire un choix : '
                 bash scripts/app.sh
                 break
                 ;;
-            "Pilotes Nvidia PPA - [Ubuntu]")
+            "Pilotes Nvidia PPA (ATTENTION !) - [Ubuntu]")
                 sudo add-apt-repository ppa:graphics-drivers/ppa
                 sudo apt update
                 read -e -i "" -p "Entrer pour continuer : " choice
@@ -73,11 +90,13 @@ Veuillez faire un choix : '
                 sudo apt-get install zram-config
                 sudo service zram-config start
                 echo '
+-----------------------------------------
     sudo nano /usr/bin/init-zram-swapping
-    mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024))
+    mem=$((totalmem / 2 * 1024))
     à
-    mem=$(((totalmem * 2 / ${NRDEVICES}) * 1024))
-    '
+    mem=$((totalmem * 2 * 1024))
+-----------------------------------------
+'
                 read -e -i "" -p "Entrer pour continuer : " choice
                 bash scripts/app.sh
                 break
