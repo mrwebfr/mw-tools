@@ -42,7 +42,6 @@ Veuillez faire un choix : '
 function clean_full {
 
     if [ "$OS" == "ubuntu" ]; then
-        sudo apt remove popularity-contest -y
 
         # Clean Ubuntu
         echo ''
@@ -50,6 +49,7 @@ function clean_full {
         echo ' 1/4 | PC - APT Nettoyage'
         echo '--------------------------------'
         echo ''
+        sudo apt remove popularity-contest -y
         if ! dpkg -s 'trash-cli' >/dev/null 2>&1; then
             sudo apt install trash-cli -y
         fi
@@ -58,6 +58,7 @@ function clean_full {
         sudo apt-get autoremove --purge -y
         sudo apt-get clean -y
         sudo apt-get autoclean -y
+        echo ''
         echo '--------------------------------'
         echo ' 1/4 | OK'
         echo '--------------------------------'
@@ -77,6 +78,7 @@ function clean_full {
         find ~/ -type d -iname '.DS_Store' | xargs rm -rf;
         find ~/.config/ -type d -empty -delete
         find ~/ -type d -iname '*~' | xargs rm -rf;
+        echo ''
         echo '--------------------------------'
         echo ' 2/4 | OK'
         echo '--------------------------------'
@@ -90,6 +92,7 @@ function clean_full {
         flatpak uninstall --unused
         flatpak uninstall --delete-data -y
         find ~/.var -type d \( -path ~/.var/app/org.mozilla.firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
+        echo ''
         echo '--------------------------------'
         echo ' 3/4 | OK'
         echo '--------------------------------'
@@ -102,6 +105,7 @@ function clean_full {
         echo ''
         find ~/snap -type d \( -path ~/snap/snapd-desktop-integration -path ~/snap/firefox \) -prune -o \( -iname "cache" -o -iname ".cache" \) | xargs rm -rf;
         LANG=C snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done
+        echo ''
         echo '--------------------------------'
         echo ' 4/4 | OK'
         echo '--------------------------------'
