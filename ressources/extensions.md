@@ -32,7 +32,7 @@ https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 --- 
 --- 
 
-### Gnome 40 : Extensions Gnome Shell
+### Gnome ++ : Extensions Gnome Shell
 
 #### Arc Menu
 Application Menu for GNOME, with various layouts to choose from!
