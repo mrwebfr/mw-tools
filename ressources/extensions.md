@@ -1,52 +1,38 @@
-### Gnome 41 : Extensions Gnome Shell
-
-#### User Themes
-Load shell themes from user directory.  
-https://extensions.gnome.org/extension/19/user-themes/
-
-#### Clipboard Indicator
-Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.  
-https://extensions.gnome.org/extension/779/clipboard-indicator/
-
-#### Compiz alike Wobbly Windows Effect
-Wobbly windows effect inspired by the Compiz ones  
-https://extensions.gnome.org/extension/2950/compiz-alike-windows-effect/
-
-#### Coverflow Alt-Tab
-Replacement of Alt-Tab, iterates through windows in a cover-flow manner.  
-https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+### Gnome 43 : Extensions Gnome Shell
 
 #### Dash to Panel
 An icon taskbar for the Gnome Shell.  
 https://extensions.gnome.org/extension/1160/dash-to-panel/
 
-#### NetSpeed
-Displays Internet Speed  
-https://extensions.gnome.org/extension/104/netspeed/
-
-#### Panel OSD
-Configuring where on the (main) screen notifications will appear, instead of just above the message tray  
-https://extensions.gnome.org/extension/708/panel-osd/
-
-#### Sensory Perception  
-Shows CPU temperature  
-https://extensions.gnome.org/extension/1145/sensory-perception/
-
-#### Status Area Horizontal Spacing  
-Reduce the horizontal spacing between icons in the top-right status area  
-https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/
-
 #### Gnome 4x UI Improvements  
 Tunes gnome 40/41's Overview UI to make it more usable.  
 https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/
 
-#### Vertical overview  
-Bringing back vertically stacked workspaces  
-https://extensions.gnome.org/extension/4144/vertical-overview/
+#### Clipboard Indicator
+Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.  
+https://extensions.gnome.org/extension/779/clipboard-indicator/
+
+#### Coverflow Alt-Tab
+Replacement of Alt-Tab, iterates through windows in a cover-flow manner.  
+https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+
+#### Grand Theft Focus
+Removes the 'Window is ready' notification and brings the window into focus instead.  
+https://extensions.gnome.org/extension/5410/grand-theft-focus/
+
+#### User Themes
+Load shell themes from user directory.  
+https://extensions.gnome.org/extension/19/user-themes/
+
+#### Compiz windows effect
+Compiz wobbly windows effect thanks to compiz plugin engine.  
+https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 
 --- 
+--- 
+--- 
 
-### Extensions Gnome Shell
+### Gnome 40 : Extensions Gnome Shell
 
 #### Arc Menu
 Application Menu for GNOME, with various layouts to choose from!
@@ -127,3 +113,24 @@ https://extensions.gnome.org/extension/3294/tocuhpad-window-switcher/
 #### Material Shell
 A simple, productivity oriented GNOME Shell replacement ...  
 https://extensions.gnome.org/extension/3357/material-shell/
+
+
+#### NetSpeed
+Displays Internet Speed  
+https://extensions.gnome.org/extension/104/netspeed/
+
+#### Panel OSD
+Configuring where on the (main) screen notifications will appear, instead of just above the message tray  
+https://extensions.gnome.org/extension/708/panel-osd/
+
+#### Sensory Perception  
+Shows CPU temperature  
+https://extensions.gnome.org/extension/1145/sensory-perception/
+
+#### Status Area Horizontal Spacing  
+Reduce the horizontal spacing between icons in the top-right status area  
+https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/
+
+#### Vertical overview  
+Bringing back vertically stacked workspaces  
+https://extensions.gnome.org/extension/4144/vertical-overview/
