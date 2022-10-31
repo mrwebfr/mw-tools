@@ -6,9 +6,9 @@ Veuillez faire un choix : '
     options=(
         "Retour"
         "MW - Icônes"
-        "Flat Remix - Thèmes"
-        "Otis - Thèmes"
-        "Flatpak Themes"
+        # "Flat Remix - Thèmes"
+        # "Otis - Thèmes"
+        "Supprimer les Themes"
     )
 
     select opt in "${options[@]}"
@@ -30,8 +30,19 @@ Veuillez faire un choix : '
                 run_script "scripts/themes/theme-otis.sh"
                 break
                 ;;
-            "Flatpak Themes")
-                flatpak override --user --filesystem=xdg-config/gtk-4.0 --filesystem=home/.themes/
+            "Supprimer les Themes")
+                # flatpak override --user --filesystem=xdg-config/gtk-4.0 --filesystem=home/.themes/
+
+                rm -rf ~/.themes/Otis*
+                rm -rf ~/.themes/Mrweb-Otis-*
+                sudo rm -rf /usr/share/themes/Otis*
+                sudo rm -rf /usr/share/themes/Mrweb-Otis-*
+
+                rm -rf ~/.themes/Flat-Remix*
+                sudo rm -rf /usr/share/themes/Flat-Remix*
+
+                sudo flatpak override --reset
+                
                 wait
                 source setup.sh
                 break

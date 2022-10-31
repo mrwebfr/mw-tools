@@ -10,9 +10,9 @@ Veuillez faire un choix : '
         "Quitter"
         "Mises à jour"
         "Nettoyage"
-        "Thèmes"
         "Applications"
         "Outils"
+        "Thèmes"
     )
 
     select opt in "${options[@]}"
@@ -31,16 +31,16 @@ Veuillez faire un choix : '
                 run_script "scripts/dist_clean.sh"
                 break
                 ;;
-            "Thèmes")
-                run_script "scripts/themes.sh"
-                break
-                ;;
             "Applications")
                 run_script "scripts/app.sh"
                 break
                 ;;
             "Outils")
                 run_script "scripts/tools.sh"
+                break
+                ;;
+            "Thèmes")
+                run_script "scripts/themes.sh"
                 break
                 ;;
             *) echo "invalid option $REPLY";;
