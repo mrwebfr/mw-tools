@@ -1,7 +1,7 @@
 format = """
-(fg:#d00b0b)\
 $time\
-(fg:#3f7caa)\
+[ / ](fg:#ff9900)\
+$hostname\
 $directory\
 [\n-> ](fg:#d00b0b)\
 """
@@ -14,6 +14,13 @@ style_user = "fg:#d00b0b"
 style_root = "fg:#d00b0b"
 format = '[$user ]($style)'
 
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+trim_at = ""
+style = "fg:#d00b0b"
+disabled = false
+
 [directory]
 style = "fg:#ff9900"
 format = "[ $path ]($style)"
@@ -21,10 +28,10 @@ truncation_length = 10
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Documents" = ""
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
 
 [time]
 disabled = false
