@@ -1,6 +1,6 @@
 format = """
 $time\
-[ / ](fg:#ff9900)\
+[ • ](fg:#ff9900)\
 $hostname\
 $directory\
 [\n-> ](fg:#d00b0b)\
@@ -27,11 +27,11 @@ format = "[ $path ]($style)"
 truncation_length = 10
 truncation_symbol = "…/"
 
-[directory.substitutions]
-"Documents" = ""
-"Downloads" = ""
-"Music" = ""
-"Pictures" = ""
+# [directory.substitutions]
+# "Documents" = " "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
 
 [time]
 disabled = false
