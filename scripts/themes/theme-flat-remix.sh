@@ -79,6 +79,7 @@ function theme_remove_flat-remix {
     sudo rm -rf /usr/share/themes/Flat-Remix*
     # rm -rf ~/.themes/.config/gtk-4.0/gtk.css
     # rm -rf ~/.themes/.config/gtk-4.0/assets
+    sudo flatpak override --reset
 }
 
 function theme_flat-remix {

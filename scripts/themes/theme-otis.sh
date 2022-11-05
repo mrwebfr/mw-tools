@@ -30,6 +30,7 @@ function theme_remove_otis {
     rm -rf ~/.themes/Mrweb-Otis-*
     sudo rm -rf /usr/share/themes/Otis*
     sudo rm -rf /usr/share/themes/Mrweb-Otis-*
+    sudo flatpak override --reset
 }
 
 function theme_otis {
