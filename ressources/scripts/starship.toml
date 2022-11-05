@@ -1,6 +1,5 @@
 format = """
 $time\
-[ • ](fg:#ff9900)\
 $hostname\
 $directory\
 [\n-> ](fg:#d00b0b)\
@@ -15,8 +14,8 @@ style_root = "fg:#d00b0b"
 format = '[$user ]($style)'
 
 [hostname]
-ssh_only = false
-format = "[$hostname]($style)"
+ssh_only = true
+format = "[ • ](fg:#ff9900)[$hostname]($style)"
 trim_at = ""
 style = "fg:#d00b0b"
 disabled = false
