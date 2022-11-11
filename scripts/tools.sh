@@ -36,6 +36,11 @@ Veuillez faire un choix : '
                 run_script "scripts/tools/hdd.sh"
                 break
                 ;;
+            "Réseau")
+                clear
+                run_script "scripts/tools/network.sh"
+                break
+                ;;
             "Informations Wifi")
                 clear
                 run_script "scripts/tools/wifi.sh"
