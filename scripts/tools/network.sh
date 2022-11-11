@@ -1,8 +1,10 @@
 #!/bin/bash
 function f_tools_network_arp {
     sudo ip -s -s neigh flush all
-}
-function f_tools_network_arp2 {
+    sleep 5s
+    echo ''
+    echo '---------------------'
+    echo ''
     sudo arp
 }
 
@@ -18,7 +20,6 @@ function f_tools_network {
             "IP réseau avec ARP")
                 clear
                 f_tools_network_arp
-                f_tools_network_arp2
                 break
                 ;;
         esac
