@@ -1,8 +1,7 @@
 #!/bin/bash
 function f_tools_network_arp {
     sudo ip -s -s neigh flush all
-    sleep 2s
-    arp
+    sudo arp
 }
 
 function f_tools_network {
