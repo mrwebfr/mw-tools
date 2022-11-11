@@ -6,6 +6,7 @@ Veuillez faire un choix : '
         "Retour"
         "Vider la Ram en cache"
         "SpeedTest"
+        "Réseau"
         "HDD, Bios et Matériel"
         "Informations Wifi"
         "Informations Bluetooth"
@@ -31,14 +32,14 @@ Veuillez faire un choix : '
                 speedtest-cli
                 break
                 ;;
-            "HDD, Bios et Matériel")
-                clear
-                run_script "scripts/tools/hdd.sh"
-                break
-                ;;
             "Réseau")
                 clear
                 run_script "scripts/tools/network.sh"
+                break
+                ;;
+            "HDD, Bios et Matériel")
+                clear
+                run_script "scripts/tools/hdd.sh"
                 break
                 ;;
             "Informations Wifi")
