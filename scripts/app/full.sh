@@ -12,7 +12,7 @@ Veuillez faire un choix : '
     "Gnome Software + Flatpak - [Ubuntu]"
     "Flatpak Beta - [Ubuntu]"
     "Snap Store - Supprimer [Snap]"
-    "Compatibilités médias - [Ubuntu]"
+    # "Compatibilités médias - [Ubuntu]"
     "Codecs multimédias essentiels - [Ubuntu]"
     "Microsoft fonts - [Ubuntu]"
     "Fonts Microsoft & Apple - [GitHub]"
