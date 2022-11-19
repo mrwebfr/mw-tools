@@ -48,8 +48,8 @@ Veuillez faire un choix : '
     done
 
 }
-#cp /tmp/mw_tools/tools.sh ~/tools.sh
-#chmod +x ~/tools.sh
+cp /tmp/mw_tools/tools.sh ~/tools.sh
+chmod +x ~/tools.sh
 clear
 cd /tmp/mw_tools/
 chmod +x scripts/functions.sh
