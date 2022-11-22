@@ -60,7 +60,7 @@ Veuillez faire un choix : '
             "Proton VPN")
                 banner
                 cp /tmp/mw_tools/ressources/applications/protonvpn-cli.desktop ~/.config/autostart
-                cp /tmp/mw_tools/ressources/applications/protonvpn ~/.mw_tools
+                cp -r /tmp/mw_tools/ressources/applications/protonvpn ~/.mw_tools
                 wait
                 bash_cmd "sgc"
                 ;;
