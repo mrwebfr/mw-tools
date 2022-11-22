@@ -1,10 +1,10 @@
 #!/bin/bash
 cp /tmp/mw_tools/tools.sh ~/tools.sh && chmod +x ~/tools.sh && clear
 cd /tmp/mw_tools/
-for filename in app/functions/*.sh
+for file in app/functions/*.sh
 do
-    source "$filename"
-    chmod +x "$filename"
+    source "$file"
+    chmod +x "$file"
 done
 
 function main() {
