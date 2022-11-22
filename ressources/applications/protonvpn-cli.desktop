@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=protonvpn-cli ks --off
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[fr_FR]=Proton Killswitch Off
+Name=Proton Killswitch Off
+Comment[fr_FR]=Proton Killswitch Off
+Comment=Proton Killswitch Off

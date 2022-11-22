@@ -9,6 +9,7 @@ Veuillez faire un choix : '
         "Tilix Dump"
         "Tilix Load"
         "LibreOffice Flatpak Launcher light"
+        "Proton VPN"
     )
     select opt in "${options[@]}"
     do
@@ -53,6 +54,13 @@ Veuillez faire un choix : '
             "LibreOffice Flatpak Launcher light")
                 banner
                 cp /tmp/mw_tools/ressources/applications/org.libreoffice* ~/.local/share/applications
+                wait
+                bash_cmd "sgc"
+                ;;
+            "Proton VPN")
+                banner
+                cp /tmp/mw_tools/ressources/applications/protonvpn-cli.desktop ~/.config/autostart
+                cp /tmp/mw_tools/ressources/applications/protonvpn ~/.mw_tools
                 wait
                 bash_cmd "sgc"
                 ;;
