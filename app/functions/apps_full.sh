@@ -26,27 +26,23 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Paquets utiles - [Ubuntu]")
                 sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon xdotool
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Compatibilités médias - [Ubuntu]")
                 sudo apt install heif-gdk-pixbuf heif-thumbnailer
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "VMware - [Ubuntu]")
                 sudo apt install gcc build-essential
                 xdg-open https://www.vmware.com/fr/products/workstation-player/workstation-player-evaluation.html
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Gnome Software + Flatpak - [Ubuntu]")
                 sudo apt install gnome-software
@@ -54,37 +50,33 @@ Veuillez faire un choix : '
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
                 killall gnome-software
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Snap Store - Supprimer [Snap]")
                 sudo snap remove snap-store
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             # "Flatpak - [Ubuntu]")
             #     sudo apt install -y flatpak gnome-software-plugin-flatpak
             #     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
             #     flatpak update --appstream
-            #     read -e -i "" -p "Entrer pour continuer : " choice
-            #     bash scripts/app.sh
+            #     wait
+            #     bash_cmd "apps"
             #     break
             #     ;;
             "Flatpak Beta - [Ubuntu]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Pilotes Nvidia PPA (ATTENTION !) - [Ubuntu]")
                 sudo add-apt-repository ppa:graphics-drivers/ppa
                 sudo apt update
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "ZRam - [Ubuntu]")
                 sudo apt-get install zram-config
@@ -97,24 +89,21 @@ Veuillez faire un choix : '
     mem=$((totalmem * 2 * 1024))
 -----------------------------------------
 '
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Codecs multimédias essentiels - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt install ubuntu-restricted-extras
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Microsoft fonts - [Ubuntu]")
                 sudo add-apt-repository multiverse
                 sudo apt update && sudo apt install ttf-mscorefonts-installer
                 sudo fc-cache -f -v
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Fonts Microsoft & Apple - [GitHub]")
                 sudo rm -r /usr/share/fonts/mw_fonts
@@ -123,14 +112,13 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             # "EarlyOOM (Ram) - [Ubuntu]")
             #     sudo apt install earlyoom
-            #     read -e -i "" -p "Entrer pour continuer : " choice
-            #     bash scripts/app.sh
+            #     wait
+            #     bash_cmd "apps"
             #     break
             #     ;;
             *) echo "invalid option $REPLY";;
@@ -163,71 +151,61 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Paquets utiles - [Fedora]")
                 sudo dnf install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flatpak - [Fedora]")
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flatpak Beta - [Fedora]")
                 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
                 flatpak update --appstream
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Snap - [Fedora]")
                 app_snap
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "RPMFusion Free - [Fedora]")
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-free-appstream-data
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "RPMFusion Non-Free - [Fedora]")
                 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
                 sudo dnf update
                 sudo dnf install rpmfusion-nonfree-appstream-data
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Codecs multimédias - [Fedora]")
                 sudo dnf install gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly
                 sudo dnf install gstreamer1-plugins-{base,good,bad-free,good-extras,bad-free-extras} gstreamer1-plugin-mpg123
                 sudo dnf install gstreamer1-libav gstreamer1-plugins-{bad-freeworld,ugly}
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "NCDU (disk space) - [Fedora]")
                 sudo dnf install ncdu
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Microsoft fonts - [Fedora DNF]")
                 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
                 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Fonts Microsoft & Apple - [GitHub]")
                 sudo rm -r /usr/share/fonts/mw_fonts
@@ -236,9 +214,8 @@ Veuillez faire un choix : '
                 unzip mw_fonts.zip
                 rm mw_fonts.zip
                 sudo mv /tmp/mw_tools/mw_fonts /usr/share/fonts/mw_fonts
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -261,21 +238,18 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Snap - [Fedora]")
                 sudo dnf install snapd
                 sudo ln -s /var/lib/snapd/snap /snap
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Snap store - [Snap]")
                 sudo snap install snap-store
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -302,14 +276,14 @@ do
     case $opt in
         "Retour")
             clear
-            bash scripts/app.sh
+            bash_cmd "apps"
             break
             ;;
         "Flash Player - [Ubuntu]")
             clear
             sudo apt install adobe-flashplugin
-            read -e -i "" -p "Entrer pour continuer : " choice
-            bash scripts/app.sh
+            wait
+            bash_cmd "apps"
             break
             ;;
         *) echo "invalid option $REPLY";;
@@ -332,14 +306,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Anydesk - [Flatpak]")
                 flatpak install flathub com.anydesk.Anydesk
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -362,20 +334,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Atom - [Flatpak]")
                 flatpak install io.atom.Atom
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Atom - [Snap]")
                 sudo snap install atom --classic
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -398,20 +367,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Audacity - [Flatpak]")
                 flatpak install flathub org.audacityteam.Audacity
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Audacity - [Snap]")
                 sudo snap install audacity
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -434,20 +400,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Bitwarden - [Flatpak]")
                 flatpak install com.bitwarden.desktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Bitwarden - [Snap]")
                 sudo snap install bitwarden
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -473,50 +436,42 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Flameshot - [Flatpak]")
                 flatpak install flathub org.flameshot.Flameshot
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flameshot - [Ubuntu]")
                 sudo apt install flameshot
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flameshot - [Fedora]")
                 sudo dnf install flameshot
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flameshot - [Snap]")
                 sudo snap install flameshot
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Flameshot - [Flatpak]")
                 flatpak install flathub org.flameshot.Flameshot
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "SimpleScreenRecorder - [Snap]")
                 sudo snap install simplescreenrecorder
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Kooha - [Flatpak]")
                 flatpak install flathub io.github.seadve.Kooha
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -538,14 +493,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Coolero - [Flatpak]")
                 flatpak install flathub org.coolero.Coolero
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -567,14 +520,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Detwinner (Duplicate) - [Flatpak]")
                 flatpak install flathub com.neatdecisions.Detwinner
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -596,14 +547,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Filezilla - [Flatpak]")
                 flatpak install flathub org.filezillaproject.Filezilla
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -635,74 +584,62 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Firefox - [Snap]")
                 sudo snap install firefox
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Firefox Beta - [Snap]")
                 sudo snap install firefox --beta
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Firefox Nightly- [Snap]")
                 sudo snap install firefox --edge
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Firefox - [Flatpak]")
                 flatpak install flathub org.mozilla.firefox
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Firefox Beta - [Flatpak]")
                 flatpak install --user https://flathub.org/beta-repo/appstream/org.mozilla.firefox.flatpakref
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Brave - [Flatpak]")
                 flatpak install flathub com.brave.Browser
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Brave - [Snap]")
                 sudo snap install brave
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Chrome - [Flatpak]")
                 flatpak install flathub com.google.Chrome
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Chromium - [Snap]")
                 sudo snap install chromium
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Chromium - [Flatpak]")
                 flatpak install flathub org.chromium.Chromium
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Opera - [Snap]")
                 sudo snap install opera
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -725,20 +662,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Github Desktop - [Flatpak]")
                 flatpak install flathub io.github.shiftey.Desktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Github Desktop - [URL]")
                 xdg-open https://github.com/shiftkey/desktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -761,22 +695,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Installer Hypnotix - [APT Mint]")
                 sudo add-apt-repository ppa:kelebek333/mint-tools
                 sudo apt install hypnotix
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Supprimer Hypnotix - [APT Mint]")
                 sudo apt autoremove --purge hypnotix
                 sudo add-apt-repository --remove ppa:kelebek333/mint-tools
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -799,20 +730,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Krita - [Flatpak]")
                 flatpak install flathub org.kde.krita
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Krita - [Snap]")
                 sudo snap install krita
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -835,20 +763,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "LibreOffice - [Flatpak]")
                 flatpak install flathub org.libreoffice.LibreOffice
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "LibreOffice - [Snap]")
                 sudo snap install libreoffice
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -870,16 +795,14 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Mainline Kernel - [Ubuntu]")
                 sudo add-apt-repository ppa:cappelikan/ppa
             	sudo apt update
             	sudo apt install mainline
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -902,20 +825,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "MediaInfo - [Flatpak]")
                 flatpak install flathub net.mediaarea.MediaInfo
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "MediaInfo - [Snap]")
                 sudo snap install mediainfo
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -938,20 +858,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "AppEditor - [Flatpak]")
                 flatpak install flathub com.github.donadigo.appeditor
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "MenuLibre - [Ubuntu]")
                 sudo apt install menulibre
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -974,23 +891,20 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "NextCloud Client - [Flatpak]")
                 flatpak install flathub org.nextcloud.Nextcloud
                 #flatpak override --user --own-name=org.kde.* org.nextcloud.Nextcloud
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "NextCloud Client Dev - [Ubuntu]")
                 sudo add-apt-repository ppa:nextcloud-devs/client
                 sudo apt update
                 sudo apt install nextcloud-client nextcloud-client-nautilus nautilus-nextcloud
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1013,20 +927,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "OnlyOffice - [Snap]")
                 sudo snap install onlyoffice-desktopeditors
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "OnlyOffice - [Flatpak] (Polices manquantes)")
                 flatpak install org.onlyoffice.desktopeditors
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1053,44 +964,37 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "PDF Arranger - [Flatpak]")
                 flatpak install flathub com.github.jeromerobert.pdfarranger
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PDF Mix Tool - [Flatpak]")
                 flatpak install flathub eu.scarpetta.PDFMixTool
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PDF Mix Tool - [Snap]")
                 sudo snap install pdfmixtool
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PDF Okular - [Flatpak]")
                 flatpak install org.kde.okular
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PDF Okular - [Snap]")
                 sudo snap install okular
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PDF Slicer - [Flatpak]")
                 flatpak install flathub com.github.junrrein.PDFSlicer
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1112,14 +1016,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Piper - [Flatpak]")
                 flatpak install flathub org.freedesktop.Piper
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1142,20 +1044,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Plex Player - [Flatpak]")
                 flatpak install flathub tv.plex.PlexDesktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Plex Player - [URL]")
                 xdg-open https://knapsu.eu/plex/
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1178,29 +1077,26 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "ProtonVPN - [URL]")
                 xdg-open https://protonvpn.com/support/official-linux-client/
                 xdg-open https://protonvpn.com/support/knowledge-base/official-linux-client
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             # "ProtonVPN - [Fedora]")
             #     sudo wget -q -O - https://repo.protonvpn.com/debian/public_key.asc | sudo apt-key add - && sudo add-apt-repository 'deb [arch=amd64] https://repo.protonvpn.com/debian unstable main'
             #     sudo apt-get update && sudo apt-get install protonvpn
-            #     read -e -i "" -p "Entrer pour continuer : " choice
-            # bash scripts/app.sh
+            #     wait
+            # bash_cmd "apps"
             # break
             #     ;;
             "Désinstaller ProtonVPN PIP3 - [Ubuntu]")
                 sudo pip3 uninstall protonvpn-cli
                 sudo apt autoremove --purge dialog python3-pip python3-setuptools
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1224,20 +1120,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "PO Poedit - [Flatpak]")
                 flatpak install flathub net.poedit.Poedit
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "PO Gtranslator- [Flatpak]")
                 flatpak install flathub org.gnome.Gtranslator
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1260,20 +1153,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Mousai - [Flatpak]")
                 flatpak install flathub io.github.seadve.Mousai
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "SongRec - [Flatpak]")
                 flatpak install flathub com.github.marinm.songrec
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1296,20 +1186,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Skype - [Flatpak]")
                 flatpak install flathub com.skype.Client
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Skype - [Snap]")
                 sudo snap install skype --classic
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1332,22 +1219,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "SpeedTest - [Ubuntu]")
                 sudo apt install speedtest-cli
                 pip install speedtest-cli
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "SpeedTest - [Fedora]")
                 sudo dnf install speedtest-cli
                 pip install speedtest-cli
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1370,20 +1254,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Starship - [URL]")
                 xdg-open https://snapcraft.io/starship
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Copier la config")
                 cp /tmp/mw_tools/ressources/scripts/starship.toml ~/.config/starship.toml
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1406,20 +1287,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Spotify - [Flatpak]")
                 flatpak install com.spotify.Client
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Spotify - [Snap]")
                 sudo snap install spotify
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1442,20 +1320,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Stacer - [Ubuntu]")
                 sudo apt install stacer
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Stacer - [Fedora]")
                 sudo dnf install stacer
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1478,8 +1353,7 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Teamviewer Installation - [DEB]")
                 cd /tmp
@@ -1487,16 +1361,14 @@ Veuillez faire un choix : '
                 sudo apt install ./teamviewer_amd64.deb
                 rm teamviewer_amd64.deb
                 cd /tmp/mw_tools/
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Teamviewer Désinstallation - [DEB]")
                 sudo apt autoremove --purge teamviewer
                 sudo rm -rf /etc/apt/sources.list.d/teamviewer*
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1519,20 +1391,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Telegram - [Flatpak]")
                 flatpak install org.telegram.desktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Telegram - [Snap]")
                 sudo snap install telegram-desktop
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1559,14 +1428,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Guake (Xorg) - [Ubuntu]")
                 sudo apt install guake
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Tilix - [Ubuntu]")
                 sudo apt install tilix
@@ -1577,9 +1444,8 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Tilix - [Fedora]")
                 sudo dnf install tilix
@@ -1590,17 +1456,15 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "StarShip - [Snap]")
                 sudo snap install starship
                 echo 'eval "$(starship init bash)"'
                 cp /tmp/mw_tools/ressources/scripts/configs/starship.toml ~/.config/starship.toml
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Powerline - [Ubuntu]")
                 sudo apt install powerline
@@ -1611,9 +1475,8 @@ Veuillez faire un choix : '
         source /usr/share/powerline/bindings/bash/powerline.sh
     fi
                 '
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Powerline - [Fedora]")
                 sudo dnf install powerline
@@ -1627,9 +1490,8 @@ Veuillez faire un choix : '
       . /usr/share/powerline/bash/powerline.sh
     fi
                 '
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1652,22 +1514,19 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Timeshift - [Ubuntu]")
                 sudo add-apt-repository -y ppa:teejee2008/timeshift
                 sudo apt-get update
                 sudo apt-get install timeshift
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Timeshift - [Fedora]")
                 sudo dnf install timeshift
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1689,20 +1548,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "qBittorrent - [Flatpak]")
                 flatpak install flathub org.qbittorrent.qBittorrent
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Transmission - [Flatpak]")
                 flatpak install flathub com.transmissionbt.Transmission
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1723,14 +1579,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Touchegg - [URL]")
                 xdg-open https://github.com/JoseExposito/touchegg/releases
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1753,20 +1607,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "Uget - [Ubuntu]")
                 sudo apt install uget
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "Uget - [Fedora]")
                 sudo dnf install uget
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1788,14 +1639,12 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "VirtualBox - [URL]")
                 xdg-open https://www.virtualbox.org/wiki/Downloads
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "VirtualBox + ExtPack par Oracle - [Ubuntu]")
                 cd /tmp
@@ -1807,9 +1656,8 @@ Veuillez faire un choix : '
                 sudo apt-get install virtualbox-6.1 &&
                 wget https://download.virtualbox.org/virtualbox/6.1.6/Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack &&
                 sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1832,20 +1680,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "VLC - [Flatpak]")
                 flatpak install flathub org.videolan.VLC
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "VLC - [Snap]")
                 sudo snap install vlc
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -1868,20 +1713,17 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash scripts/app.sh
-                break
+                bash_cmd "apps"
                 ;;
             "VScode - [Flatpak]")
                 flatpak install flathub com.visualstudio.code
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             "VScode - [Snap]")
                 sudo snap install code --classic
-                read -e -i "" -p "Entrer pour continuer : " choice
-                bash scripts/app.sh
-                break
+                wait
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac

@@ -18,7 +18,8 @@ function dist_os() {
 dist_os
 
 function banner() {
-    local banner_path="$PWD/scripts/banner"
+    clear
+    local banner_path="$PWD/app/banner"
     if [ -f $banner_path ];then 
         clear && echo ""
         cat $banner_path
@@ -27,18 +28,6 @@ function banner() {
         error "banner not Found..."
     fi
     unset banner_path
-}
-
-function run_script() {
-    local script_path=$1
-    local script_name=$2
-    if [ -f "$PWD/$script_path" ];then
-        chmod +x "$PWD/$script_path"
-    else
-        error "$PWD/$script_path not Found..."    
-    fi
-    source $PWD/$script_path
-    unset script_path
 }
 
 function wait() {
@@ -54,4 +43,20 @@ function wait() {
 function error() {
     echo -e "\033[1;31merror:\e[0m $@"
     exit 1
+}
+
+function bash_cmd() {
+    clear
+    banner
+    $1
+    wait
+    clear
+    banner
+    main
+}
+
+function bash_cmd_main() {
+    clear
+    banner
+    main
 }

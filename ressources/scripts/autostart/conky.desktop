@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Conky
-Exec=conky --daemonize --pause=5
-Comment=Lancer conky
-X-GNOME-Autostart-Delay=0
-X-GNOME-Autostart-enabled=true
-Categories=GNOME;GTK;System;Utility;

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-function clean {
-    source scripts/functions.sh
-    clear && banner
+function dist_clean {
     
     PS3='
 Veuillez faire un choix : '
@@ -20,19 +18,13 @@ Veuillez faire un choix : '
                 break
                 ;;
             "Nettoyage complet")
-                clear
                 clean_full
-                break
                 ;;
             "Purger configuration inutile DPKG")
-                clear
                 clean_dpkg
-                break
                 ;;
             "Purge journaux /var")
-                clear
                 clean_var
-                break
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -170,13 +162,3 @@ function clean_var {
         sudo rm /var/cache/apt/archives/*.deb
     fi
 }
-
-source scripts/functions.sh
-
-clear && banner
-
-clean_full
-
-wait
-
-bash setup.sh

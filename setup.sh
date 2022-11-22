@@ -1,7 +1,12 @@
 #!/bin/bash
+cp /tmp/mw_tools/tools.sh ~/tools.sh && chmod +x ~/tools.sh && clear
+for filename in app/functions/*.sh
+do
+    source "$filename"
+    chmod +x "$filename"
+done
 
 function main() {
-    banner
 
     PS3='
 Veuillez faire un choix : '
@@ -10,9 +15,8 @@ Veuillez faire un choix : '
         "Quitter"
         "Mises à jour"
         "Nettoyage"
-        "Applications"
         "Outils"
-        "Thèmes"
+        "Applications"
     )
 
     select opt in "${options[@]}"
@@ -24,35 +28,21 @@ Veuillez faire un choix : '
                 exit
                 ;;
             "Mises à jour")
-                run_script "scripts/dist_update.sh"
-                break
+                bash_cmd "dist_update"
                 ;;
             "Nettoyage")
-                run_script "scripts/dist_clean.sh"
-                break
-                ;;
-            "Applications")
-                run_script "scripts/app.sh"
-                break
+                bash_cmd "clean_full"
                 ;;
             "Outils")
-                run_script "scripts/tools.sh"
-                break
+                bash_cmd "tools"
                 ;;
-            "Thèmes")
-                run_script "scripts/themes.sh"
-                break
+            "Applications")
+                bash_cmd "apps"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
     done
 
 }
-cp /tmp/mw_tools/tools.sh ~/tools.sh
-chmod +x ~/tools.sh
-clear
-cd /tmp/mw_tools/
-chmod +x scripts/functions.sh
-source scripts/functions.sh
 
-main
+bash_cmd "main"

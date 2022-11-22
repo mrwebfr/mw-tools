@@ -42,12 +42,3 @@ function dist_update {
 
 }
 
-source scripts/functions.sh
-
-clear && banner
-
-dist_update
-
-wait
-
-bash setup.sh

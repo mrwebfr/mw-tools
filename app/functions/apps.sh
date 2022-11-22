@@ -1,7 +1,5 @@
 #!/bin/bash
-function f_install {
-
-    source scripts/app/full.sh
+function apps {
 
 PS3='
 Veuillez faire un choix : '
@@ -54,233 +52,232 @@ Veuillez faire un choix : '
     do
         case $opt in
             "Retour")
-                bash setup.sh
-                break
+                bash_cmd_main
                 ;;
             "Ubuntu Extras")
-                clear && banner
+                banner
                 app_ubuntu
-                break
+                bash_cmd "apps"
                 ;;
             "Fedora Extras")
-                clear && banner
+                banner
                 app_fedora
-                break
+                bash_cmd "apps"
                 ;;
             "Anydesk")
-                clear && banner
+                banner
                 app_anydesk
-                break
+                bash_cmd "apps"
                 ;;
             "Atom")
-                clear && banner
+                banner
                 app_atom
-                break
+                bash_cmd "apps"
                 ;;
             "Audacity")
-                clear && banner
+                banner
                 app_audacity
-                break
+                bash_cmd "apps"
                 ;;
             "Bitwarden")
-                clear && banner
+                banner
                 app_bitwarden
-                break
+                bash_cmd "apps"
                 ;;
             "Capture Image/Vidéo")
-                clear && banner
+                banner
                 app_capture
-                break
+                bash_cmd "apps"
                 ;;
             "Chrome / Chromium")
-                clear && banner
+                banner
                 app_chromium
-                break
+                bash_cmd "apps"
                 ;;
             "Coolero")
-                clear && banner
+                banner
                 app_coolero
-                break
+                bash_cmd "apps"
                 ;;
             "Detwinner (Duplicate)")
-                clear && banner
+                banner
                 app_detwinner
-                break
+                bash_cmd "apps"
                 ;;
             "Filezilla")
-                clear && banner
+                banner
                 app_filezilla
-                break
+                bash_cmd "apps"
                 ;;
             "Flameshot")
-                clear && banner
+                banner
                 app_flameshot
-                break
+                bash_cmd "apps"
                 ;;
             "Github Desktop")
-                clear && banner
+                banner
                 app_git
-                break
+                bash_cmd "apps"
                 ;;
             "Hypnotix")
-                clear && banner
+                banner
                 app_hypnotix
-                break
+                bash_cmd "apps"
                 ;;
             "Krita")
-                clear && banner
+                banner
                 app_krita
-                break
+                bash_cmd "apps"
                 ;;
             "LibreOffice")
-                clear && banner
+                banner
                 app_libreoffice
-                break
+                bash_cmd "apps"
                 ;;
             "Mainline Kernel")
-                clear && banner
+                banner
                 app_mainline
-                break
+                bash_cmd "apps"
                 ;;
             "Menu")
-                clear && banner
+                banner
                 app_menulibre
-                break
+                bash_cmd "apps"
                 ;;
             "MediaInfo")
-                clear && banner
+                banner
                 app_mediainfo
-                break
+                bash_cmd "apps"
                 ;;
             "Navigateurs")
-                clear && banner
+                banner
                 app_nav
-                break
+                bash_cmd "apps"
                 ;;
             "NextCloud Client")
-                clear && banner
+                banner
                 app_nextcloud
-                break
+                bash_cmd "apps"
                 ;;
             "OnlyOffice")
-                clear && banner
+                banner
                 app_onlyoffice
-                break
+                bash_cmd "apps"
                 ;;
             "Opera")
-                clear && banner
+                banner
                 app_opera
-                break
+                bash_cmd "apps"
                 ;;
             "PDF")
-                clear && banner
+                banner
                 app_pdf
-                break
+                bash_cmd "apps"
                 ;;
             "Piper (souris)")
-                clear && banner
+                banner
                 app_piper
-                break
+                bash_cmd "apps"
                 ;;
             "Plex Player")
-                clear && banner
+                banner
                 app_plex
-                break
+                bash_cmd "apps"
                 ;;
             "Developpement")
-                clear && banner
+                banner
                 app_dev
-                break
+                bash_cmd "apps"
                 ;;
             "ProtonVPN")
-                clear && banner
+                banner
                 app_proton
-                break
+                bash_cmd "apps"
                 ;;
             "SimpleScreenRecorder")
-                clear && banner
+                banner
                 app_simplescreenrecorder
-                break
+                bash_cmd "apps"
                 ;;
             "Skype")
-                clear && banner
+                banner
                 app_skype
-                break
+                bash_cmd "apps"
                 ;;
             "Shazam")
-                clear && banner
+                banner
                 app_shazam
-                break
+                bash_cmd "apps"
                 ;;
             "SpeedTest")
-                clear && banner
+                banner
                 app_speedtest
-                break
+                bash_cmd "apps"
                 ;;
             "Spotify")
-                clear && banner
+                banner
                 app_spotify
-                break
+                bash_cmd "apps"
                 ;;
             "Stacer")
-                clear && banner
+                banner
                 app_stacer
-                break
+                bash_cmd "apps"
                 ;;
             "Starship")
-                clear && banner
+                banner
                 app_starship
-                break
+                bash_cmd "apps"
                 ;;
             "Teamviewer")
-                clear && banner
+                banner
                 app_teamviewer
-                break
+                bash_cmd "apps"
                 ;;
             "Telegram")
-                clear && banner
+                banner
                 app_telegram
-                break
+                bash_cmd "apps"
                 ;;
             "Terminal")
-                clear && banner
+                banner
                 app_term
-                break
+                bash_cmd "apps"
                 ;;
             "Timeshift")
-                clear && banner
+                banner
                 app_timeshift
-                break
+                bash_cmd "apps"
                 ;;
             "Torrent")
-                clear && banner
+                banner
                 app_torrent
-                break
+                bash_cmd "apps"
                 ;;
             "Touchegg")
-                clear && banner
+                banner
                 app_touchegg
-                break
+                bash_cmd "apps"
                 ;;
             "Uget")
-                clear && banner
+                banner
                 app_uget
-                break
+                bash_cmd "apps"
                 ;;
             "VirtualBox")
-                clear && banner
+                banner
                 app_virtualbox
-                break
+                bash_cmd "apps"
                 ;;
             "Visual Studio Code")
-                clear && banner
+                banner
                 app_vscode
-                break
+                bash_cmd "apps"
                 ;;
             "VLC")
-                clear && banner
+                banner
                 app_vlc
-                break
+                bash_cmd "apps"
                 ;;
             # "Gnome extensions")
             #     sudo apt install -y gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-shell-extension-remove-dropdown-arrows
@@ -289,9 +286,3 @@ Veuillez faire un choix : '
         esac
     done
 }
-
-source scripts/functions.sh
-
-clear && banner
-
-f_install
