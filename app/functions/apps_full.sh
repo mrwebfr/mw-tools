@@ -1222,14 +1222,15 @@ Veuillez faire un choix : '
                 bash_cmd "apps"
                 ;;
             "SpeedTest - [Ubuntu]")
-                sudo apt install speedtest-cli
-                pip install speedtest-cli
+                sudo apt-get install curl
+                curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+                sudo apt-get install speedtest
                 wait
                 bash_cmd "apps"
                 ;;
             "SpeedTest - [Fedora]")
-                sudo dnf install speedtest-cli
-                pip install speedtest-cli
+                curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.rpm.sh | sudo bash
+                sudo yum install SpeedTest
                 wait
                 bash_cmd "apps"
                 ;;
