@@ -1037,7 +1037,6 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Plex Player - [Flatpak]"
-    "Plex Player - [URL]"
     )
 
     select opt in "${options[@]}"
@@ -1048,11 +1047,6 @@ Veuillez faire un choix : '
                 ;;
             "Plex Player - [Flatpak]")
                 flatpak install flathub tv.plex.PlexDesktop
-                wait
-                bash_cmd "apps"
-                ;;
-            "Plex Player - [URL]")
-                xdg-open https://knapsu.eu/plex/
                 wait
                 bash_cmd "apps"
                 ;;
