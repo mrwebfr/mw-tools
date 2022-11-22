@@ -1,5 +1,6 @@
 #!/bin/bash
 cp /tmp/mw_tools/tools.sh ~/tools.sh && chmod +x ~/tools.sh && clear
+cd /tmp/mw_tools/
 for filename in app/functions/*.sh
 do
     source "$filename"
