@@ -479,6 +479,40 @@ Veuillez faire un choix : '
 }
 
 ##############################
+# ClamAV
+##############################
+function app_clamav {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "ClamAV - [Ubuntu]"
+    "Désinstaller ClamAV - [Ubuntu]"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                bash_cmd "apps"
+                ;;
+            "ClamAV - [Ubuntu]")
+                sudo apt install clamav clamav-daemon clamtk clamtk-gnome
+                wait
+                bash_cmd "apps"
+                ;;
+            "Désinstaller ClamAV - [Ubuntu]")
+                sudo apt autoremove --purge clamav clamav-daemon clamtk clamtk-gnome
+                rm -r ~/.clamtk
+                wait
+                bash_cmd "apps"
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
 # Coolero
 ##############################
 function app_coolero {

@@ -13,6 +13,7 @@ Veuillez faire un choix : '
     "Bitwarden"
     "Capture Image/Vidéo"
     "Coolero"
+    "ClamAV"
     "Detwinner (Duplicate)"
     "Developpement"
     "Filezilla"
@@ -92,6 +93,11 @@ Veuillez faire un choix : '
             "Chrome / Chromium")
                 banner
                 app_chromium
+                bash_cmd "apps"
+                ;;
+            "ClamAV")
+                banner
+                app_clamav
                 bash_cmd "apps"
                 ;;
             "Coolero")
