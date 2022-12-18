@@ -612,6 +612,7 @@ Veuillez faire un choix : '
     "Chromium - [Snap]"
     "Chromium - [Flatpak]"
     "Opera - [Snap]"
+    "Tor - [Flatpak]"
     )
 
     select opt in "${options[@]}"
@@ -672,6 +673,11 @@ Veuillez faire un choix : '
                 ;;
             "Opera - [Snap]")
                 sudo snap install opera
+                wait
+                bash_cmd "apps"
+                ;;
+            "Tor - [Flatpak]")
+                flatpak install flathub com.github.micahflee.torbrowser-launcher
                 wait
                 bash_cmd "apps"
                 ;;
@@ -1267,39 +1273,6 @@ Veuillez faire un choix : '
 }
 
 ##############################
-# Starship
-##############################
-function app_starship {
-    PS3='
-Veuillez faire un choix : '
-    options=(
-    "Retour"
-    "Starship - [URL]"
-    "Copier la config"
-    )
-
-    select opt in "${options[@]}"
-    do
-        case $opt in
-            "Retour")
-                bash_cmd "apps"
-                ;;
-            "Starship - [URL]")
-                xdg-open https://snapcraft.io/starship
-                wait
-                bash_cmd "apps"
-                ;;
-            "Copier la config")
-                cp /tmp/mw_tools/ressources/scripts/starship.toml ~/.config/starship.toml
-                wait
-                bash_cmd "apps"
-                ;;
-            *) echo "invalid option $REPLY";;
-        esac
-    done
-}
-
-##############################
 # Spotify
 ##############################
 function app_spotify {
@@ -1447,7 +1420,8 @@ Veuillez faire un choix : '
     "Guake (Xorg) - [Ubuntu]"
     "Tilix - [Ubuntu]"
     "Tilix - [Fedora]"
-    "StarShip - [Snap]"
+    "Starship - [URL]"
+    "Starship - Copier la config"
     "Powerline - [Ubuntu]"
     "Powerline - [Fedora]"
     )
@@ -1487,10 +1461,13 @@ Veuillez faire un choix : '
                 wait
                 bash_cmd "apps"
                 ;;
-            "StarShip - [Snap]")
-                sudo snap install starship
-                echo 'eval "$(starship init bash)"'
-                cp /tmp/mw_tools/ressources/scripts/configs/starship.toml ~/.config/starship.toml
+            "Starship - [URL]")
+                xdg-open https://snapcraft.io/starship
+                wait
+                bash_cmd "apps"
+                ;;
+            "Starship - Copier la config")
+                cp /tmp/mw_tools/ressources/scripts/starship.toml ~/.config/starship.toml
                 wait
                 bash_cmd "apps"
                 ;;

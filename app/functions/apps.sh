@@ -36,7 +36,6 @@ Veuillez faire un choix : '
     "SpeedTest"
     "Spotify"
     "Stacer"
-    "Starship"
     "Teamviewer"
     "Telegram"
     "Terminal"
