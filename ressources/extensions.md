@@ -28,6 +28,11 @@ https://extensions.gnome.org/extension/19/user-themes/
 Compiz wobbly windows effect thanks to compiz plugin engine.  
 https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 
+
+#### Battery indicator (upower)
+Display battery level indicators for connected devices (such as mouse, keyboard, game controller, touchpad ...) as reported by upower.  
+https://extensions.gnome.org/extension/5615/battery-indicator-upower/
+
 --- 
 --- 
 --- 
