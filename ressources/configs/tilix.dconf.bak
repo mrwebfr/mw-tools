@@ -4,14 +4,21 @@ prompt-on-close=true
 quake-active-monitor=false
 quake-height-percent=37
 quake-hide-headerbar=true
+quake-hide-lose-focus=false
 quake-keep-on-top=true
 quake-show-on-all-workspaces=true
 quake-specific-monitor=-1
+quake-tab-position='top'
+quake-window-position='top'
 sidebar-on-right=false
+tab-position='top'
 terminal-title-show-when-single=false
+terminal-title-style='normal'
+theme-variant='system'
 use-overlay-scrollbar=true
-use-tabs=false
+use-tabs=true
 warn-vte-config-issue=false
+window-style='normal'
 
 [keybindings]
 nautilus-open='<Primary><Alt>t'
