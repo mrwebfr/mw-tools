@@ -33,6 +33,10 @@ https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 Display battery level indicators for connected devices (such as mouse, keyboard, game controller, touchpad ...) as reported by upower.  
 https://extensions.gnome.org/extension/5615/battery-indicator-upower/
 
+### Space Bar
+Replaces the 'Activities' button with an i3-like workspaces bar.  
+https://extensions.gnome.org/extension/5090/space-bar/
+
 --- 
 --- 
 --- 
