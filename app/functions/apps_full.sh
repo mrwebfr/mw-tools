@@ -9,7 +9,7 @@ Veuillez faire un choix : '
     options=(
     "Retour"
     "Paquets utiles - [Ubuntu]"
-    "Gnome Software + Flatpak - [Ubuntu]"
+    "Flatpak - [Ubuntu]"
     "Flatpak Beta - [Ubuntu]"
     "Snap Store - Supprimer [Snap]"
     # "Compatibilités médias - [Ubuntu]"
