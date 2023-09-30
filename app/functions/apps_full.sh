@@ -44,12 +44,12 @@ Veuillez faire un choix : '
                 wait
                 bash_cmd "apps"
                 ;;
-            "Gnome Software + Flatpak - [Ubuntu]")
-                sudo apt install gnome-software
+            "Flatpak - [Ubuntu]")
+                #sudo apt install gnome-software
                 sudo apt install -y flatpak gnome-software-plugin-flatpak
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
-                killall gnome-software
+                #killall gnome-software
                 wait
                 bash_cmd "apps"
                 ;;
