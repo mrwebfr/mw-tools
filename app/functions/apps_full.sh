@@ -1115,8 +1115,7 @@ Veuillez faire un choix : '
                 bash_cmd "apps"
                 ;;
             "ProtonVPN - [URL]")
-                xdg-open https://protonvpn.com/support/official-linux-client/
-                xdg-open https://protonvpn.com/support/knowledge-base/official-linux-client
+                xdg-open https://protonvpn.com/support/linux-vpn-setup/
                 wait
                 bash_cmd "apps"
                 ;;
