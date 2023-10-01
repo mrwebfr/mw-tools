@@ -29,7 +29,7 @@ Veuillez faire un choix : '
                 bash_cmd "apps"
                 ;;
             "Paquets utiles - [Ubuntu]")
-                sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon xdotool chrome-gnome-shell
+                sudo apt install git subversion rar bmon htop curl gnome-tweaks dfc ncdu wavemon xdotool chrome-gnome-shell ffmpeg
                 wait
                 bash_cmd "apps"
                 ;;
@@ -45,8 +45,8 @@ Veuillez faire un choix : '
                 bash_cmd "apps"
                 ;;
             "Flatpak - [Ubuntu]")
-                # sudo apt install gnome-software
-                # sudo apt install gnome-software-plugin-flatpak
+                sudo apt install gnome-software
+                sudo apt install gnome-software-plugin-flatpak
                 sudo apt install flatpak
                 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
                 flatpak update --appstream
