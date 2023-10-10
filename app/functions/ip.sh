@@ -35,7 +35,7 @@ function ip {
     echo "---------------------------------"
     echo ""
     
-    # Effectuer un test de ping vers Google DNS
+    # Effectuer un test de ping vers Cloudflare DNS
     
     ping -c 4 1.1.1.1
     
