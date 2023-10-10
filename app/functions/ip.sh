@@ -13,9 +13,6 @@ function ip {
         sudo snap install fast
     fi
     
-    # Obtenir des informations sur l'adresse IP depuis ipinfo.io
-    json_data=$(curl -s "http://ipinfo.io/json")
-    
     # Afficher les informations pertinentes
     echo ""
     
@@ -24,32 +21,9 @@ function ip {
     echo "---------------------------------"
     echo ""
     
-    org=$(echo "$json_data" | jq -r '.org')
-    [ ! -z "$org" ] && echo "Organisation : $org"
-    
-    ip=$(echo "$json_data" | jq -r '.ip')
-    [ ! -z "$ip" ] && echo "Adresse IP : $ip"
-    
-    country=$(echo "$json_data" | jq -r '.country')
-    [ ! -z "$country" ] && echo "Pays : $country"
+    curl -s "https://ip.mrweb.fr/?v=ip,country,city,code,continent,fai"
     
     echo ""
-    
-    hostname=$(echo "$json_data" | jq -r '.hostname')
-    [ ! -z "$hostname" ] && echo "Nom d'hôte : $hostname"
-    
-    city=$(echo "$json_data" | jq -r '.city')
-    [ ! -z "$city" ] && echo "Ville : $city"
-    
-    region=$(echo "$json_data" | jq -r '.region')
-    [ ! -z "$region" ] && echo "Région : $region"
-    
-    postal=$(echo "$json_data" | jq -r '.postal')
-    [ ! -z "$postal" ] && echo "Code Postal : $postal"
-    
-    timezone=$(echo "$json_data" | jq -r '.timezone')
-    [ ! -z "$timezone" ] && echo "Fuseau Horaire : $timezone"
-    
     echo ""
     echo "---------------------------------"
     echo ""
