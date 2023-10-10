@@ -18,6 +18,7 @@ Veuillez faire un choix : '
         "Nettoyage"
         "Outils"
         "Applications"
+        "Test connexion"
     )
 
     select opt in "${options[@]}"
@@ -39,6 +40,9 @@ Veuillez faire un choix : '
                 ;;
             "Applications")
                 bash_cmd "apps"
+                ;;
+            "Test connexion")
+                bash_cmd "ip"
                 ;;
             *) echo "invalid option $REPLY";;
         esac
