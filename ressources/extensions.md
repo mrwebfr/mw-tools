@@ -8,9 +8,9 @@ https://extensions.gnome.org/extension/1160/dash-to-panel/
 Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.  
 https://extensions.gnome.org/extension/779/clipboard-indicator/
 
-#### No overview at start-up
-No overview at start-up. Nothing more.  
-https://extensions.gnome.org/extension/4099/no-overview/  
+#### Just Perfection
+Tweak Tool to Customize GNOME Shell, Change the Behavior and Disable UI Elements  
+https://extensions.gnome.org/extension/3843/just-perfection/  
 
 --- 
 --- 
