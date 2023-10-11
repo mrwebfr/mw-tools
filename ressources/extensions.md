@@ -1,16 +1,26 @@
-### Gnome 43 : Extensions Gnome Shell
+### Gnome 45 : Extensions Gnome Shell
 
 #### Dash to Panel
 An icon taskbar for the Gnome Shell.  
 https://extensions.gnome.org/extension/1160/dash-to-panel/
 
-#### Gnome 4x UI Improvements  
-Tunes gnome 40/41's Overview UI to make it more usable.  
-https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/
-
 #### Clipboard Indicator
 Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.  
 https://extensions.gnome.org/extension/779/clipboard-indicator/
+
+#### No overview at start-up
+No overview at start-up. Nothing more.  
+https://extensions.gnome.org/extension/4099/no-overview/  
+
+--- 
+--- 
+--- 
+
+### Gnome ++ : Extensions Gnome Shell
+
+#### Gnome 4x UI Improvements  
+Tunes gnome 40/41's Overview UI to make it more usable.  
+https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/
 
 #### Coverflow Alt-Tab
 Replacement of Alt-Tab, iterates through windows in a cover-flow manner.  
@@ -36,12 +46,6 @@ https://extensions.gnome.org/extension/5615/battery-indicator-upower/
 ### Space Bar
 Replaces the 'Activities' button with an i3-like workspaces bar.  
 https://extensions.gnome.org/extension/5090/space-bar/
-
---- 
---- 
---- 
-
-### Gnome ++ : Extensions Gnome Shell
 
 #### Arc Menu
 Application Menu for GNOME, with various layouts to choose from!
